@@ -1,0 +1,20 @@
+{% extends "baseUser.html"%}
+{% load crispy_forms_tags %}
+
+{%block title%}
+Registrazione
+{%endblock%}
+
+
+{%block h%}
+        Sign Up
+{%endblock%}
+
+{%block action%}
+Registrati
+{%endblock%}
+
+{%block href%}
+        <a href="{% url 'login' %}" class="btn btn-secondary mt-3" style="background-color: #007bff; color: white; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#005fc4'" onmouseout="this.style.backgroundColor='#007bff'">Accedi</a>
+        <a href="{% url 'home' %}" class="btn btn-secondary mt-3 ml-4">Indietro</a>
+{%endblock%}

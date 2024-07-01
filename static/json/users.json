@@ -1,0 +1,42 @@
+[
+    {
+        "model": "users.userprofile",
+        "pk": 5,
+        "fields": {
+            "user": "marco.rossi93",
+            "password":"progettocinema"
+        }
+    },
+    {
+        "model": "users.userprofile",
+        "pk": 6,
+        "fields": {
+            "user": "giulia.bianchi21",
+            "password":"progettocinema"
+        }
+    },
+    {
+        "model": "users.userprofile",
+        "pk": 7,
+        "fields": {
+            "user": "luca_espo89",
+            "password":"progettocinema"
+        }
+    },
+    {
+        "model": "users.userprofile",
+        "pk": 8,
+        "fields": {
+            "user": "fran.romano88",
+            "password":"progettocinema"
+        }
+    },
+    {
+        "model": "users.userprofile",
+        "pk": 9,
+        "fields": {
+            "user": "matteo.conti77",
+            "password":"progettocinema"
+        }
+    }
+]

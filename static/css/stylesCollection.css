@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+body{
+    background-color: #212529;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+
+}.carousel-item {
+    height: 400px;
+}
+
+.mainContainer{
+    background-color: #1d1a17;
+    width: 100%;
+    max-width: none;
+    border-bottom: 1px solid #fff;
+    height: 100px;
+}
+
+.logo{
+    padding-left: 10px;
+    padding-bottom: 40px;
+    width: 275px;
+    height: 100px;
+}
+
+.nav{
+    background-color: #1d1a17;
+    height: 50px;
+    padding-right: 140px;
+    padding-top: 15px;
+}
+
+.authentication{
+    background-color: #1d1a17;
+    height: 50px;
+    padding-top: 15px;
+    padding-right: 20px;
+    
+}
+
+.operationsNav, .operationsNavAct{
+    font-size: 18px;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid transparent; 
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    justify-content: center;
+}
+
+.authenticationBtn, .btnacquista, .btncerca{
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.authenticationBtn:hover, .btnacquista:hover, .btncerca:hover{
+    background-color: #004691;
+    border-color: #004691;
+}
+
+.btncerca{
+    margin-top: 34px;
+    margin-left: 220px;
+}
+
+p, h3, .form-label{
+    color: white;
+}
+h2, h1{
+    color: white;
+    font-weight: bold;
+}
+
+
+.dropdown-item, .dropdown-menu{
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+.dropdown-item:hover{
+    background-color: #004691;
+    color: white;
+}
+
+.pagination .page-link {
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6; /* Colore del bordo */
+}
+.pagination .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.pagination .page-item .page-link:hover {
+    color: white;
+    background-color: #004691;
+    border-color: #dee2e6;
+}
+
+.dropdown-toggle::after{
+    color: white;
+}

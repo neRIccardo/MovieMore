@@ -1,0 +1,82 @@
+[
+    {
+        "model": "screenings.screeningroom",
+        "pk": 1,
+        "fields": {
+            "name": "Sala 1",
+            "capacity": "300"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 2,
+        "fields": {
+            "name": "Sala 2",
+            "capacity": "250"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 3,
+        "fields": {
+            "name": "Sala 3",
+            "capacity": "310"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 4,
+        "fields": {
+            "name": "Sala 4",
+            "capacity": "275"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 5,
+        "fields": {
+            "name": "Sala 5",
+            "capacity": "330"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 6,
+        "fields": {
+            "name": "Sala 6",
+            "capacity": "200"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 7,
+        "fields": {
+            "name": "Sala 7",
+            "capacity": "225"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 8,
+        "fields": {
+            "name": "Sala 8",
+            "capacity": "265"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 9,
+        "fields": {
+            "name": "Sala 9",
+            "capacity": "290"
+        }
+    },
+    {
+        "model": "screenings.screeningroom",
+        "pk": 10,
+        "fields": {
+            "name": "Sala 10",
+            "capacity": "240"
+        }
+    }
+]

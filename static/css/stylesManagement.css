@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+body{
+    background-color: #212529;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-item, .dropdown-menu{
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+.dropdown-item:hover{
+    background-color: #004691;
+    color: white;
+}
+
+hr{
+    color: white;
+}
+
+.nav-link:hover, .link-body-emphasis:hover, .btn:hover{
+    color: #004691 !important; 
+}
+.link-body-emphasis{
+    color:#006fed !important;
+}

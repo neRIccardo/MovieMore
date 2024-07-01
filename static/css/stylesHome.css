@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+body{
+    background-color: #212529;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+
+}.carousel-item {
+    height: 400px;
+}
+
+.mainContainer{
+    background-color: #1d1a17;
+    width: 100%;
+    max-width: none;
+    border-bottom: 1px solid #fff;
+    height: 100px;
+}
+
+.logo{
+    padding-left: 10px;
+    padding-bottom: 40px;
+    width: 275px;
+    height: 100px;
+}
+
+.nav{
+    background-color: #1d1a17;
+    height: 50px;
+    padding-right: 140px;
+    padding-top: 15px;
+}
+
+.authentication{
+    background-color: #1d1a17;
+    height: 50px;
+    padding-top: 15px;
+    padding-right: 20px;
+    
+}
+
+.carousel1{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../img/carousel1.jpg');
+}
+.carousel2{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../img/carousel2.jpg');
+}
+.carousel3{
+    background-size: cover;
+    background-position: center;
+    background-image: url('../img/carousel3.jpg');
+}
+
+.operationsNav, .operationsNavAct{
+    font-size: 18px;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid transparent; 
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    justify-content: center;
+}
+
+.authenticationBtn, .btnSignUpCarousel {
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+.authenticationBtn:hover, .btnSignUpCarousel:hover{
+    background-color: #004691;
+    border-color: #004691;
+}
+
+p, h3{
+    color: white;
+}
+
+
+.dropdown-item, .dropdown-menu{
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+.dropdown-item:hover{
+    background-color: #004691;
+    color: white;
+}
+
+.dropdown-toggle::after{
+    color: white;
+}

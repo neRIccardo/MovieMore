@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="{% static 'img/logoIcon.png' %}">
+    <style>
+        {%block style%}
+        {%endblock%}
+    </style>
+</head>
+<body>
+    {%block view%}
+    {%endblock%}
+</body>
+</html>

@@ -1,0 +1,123 @@
+{% extends "baseScreenings.html" %}
+{% load static %}
+
+{% block title %}
+    Lista delle Proiezioni
+{% endblock %}
+
+{% block style %}
+    .container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    body {
+        background-color: #212529;
+        color: #333;
+    }
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .table-container {
+        margin-top: 40px;
+    }
+{% endblock %}
+
+{% block view %}
+<h2>Elenco delle Proiezioni</h2>
+<div class="container">
+    <form method="get" class="mt-4">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                {{ search_form.title.label_tag }}
+                {{ search_form.title }}
+            </div>
+            <div class="form-group col-md-3">
+                {{ search_form.genre.label_tag }}
+                {{ search_form.genre }}
+            </div>
+            <div class="form-group col-md-3">
+                {{ search_form.start_date.label_tag }}
+                {{ search_form.start_date }}
+            </div>
+            <div class="form-group col-md-3">
+                {{ search_form.end_date.label_tag }}
+                {{ search_form.end_date }}
+            </div>
+            <div class="form-group col-md-3">
+                {{ search_form.order_by.label_tag }}
+                {{ search_form.order_by }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Filtra</button>
+        <a href="{% url 'management' %}" class="btn btn-secondary">Indietro</a>
+    </form>
+    <div class="table-container mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Film</th>
+                    <th>Genere</th>
+                    <th>Sala</th>
+                    <th>Data e Ora</th>
+                    <th>Prezzo</th>
+                    <th>Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for screening in page_obj %}
+                <tr>
+                    <td>{{ screening.movie.title }}</td>
+                    <td>{{ screening.movie.genre }}</td>
+                    <td>{{ screening.room.name }}</td>
+                    <td>{{ screening.start_time }}</td>
+                    <td>{{ screening.price }}</td>
+                    <td>
+                        <a href="{% url 'edit_screening' screening.id %}" class="btn btn-primary btn-sm">Modifica</a>
+                        <a href="{% url 'delete_screening' screening.id %}" class="btn btn-danger btn-sm">Elimina</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if search_form %}{{ search_form.data.urlencode }}&{% endif %}page=1" aria-label="First">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?{% if search_form %}{{ search_form.data.urlencode }}&{% endif %}page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                    <li class="page-item"><a class="page-link" href="?{% if search_form %}{{ search_form.data.urlencode }}&{% endif %}page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?{% if search_form %}{{ search_form.data.urlencode }}&{% endif %}page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?{% if search_form %}{{ search_form.data.urlencode }}&{% endif %}page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}

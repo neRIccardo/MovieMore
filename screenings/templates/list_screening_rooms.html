@@ -1,0 +1,102 @@
+{% extends "baseScreenings.html" %}
+{% load static %}
+{% block title %}
+Lista delle Sale
+{% endblock %}
+{% block style %}
+.container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+body {
+    background-color: #212529;
+    color: #333;
+}
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+.table-container {
+    margin-top: 40px;
+}
+{% endblock %}
+{% block view %}
+<h2>Elenco delle Sale</h2>
+<div class="container">
+   <form method="GET" action="{% url 'list_screeningrooms' %}">
+      <div class="form-row">
+         <div class="form-group col-md-3">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ name }}">
+         </div>
+         <div class="form-group col-md-3">
+            <label for="capacity">Capienza</label>
+            <input type="text" class="form-control" id="capacity" name="capacity" value="{{ capacity }}">
+         </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+      <a href="{% url 'management' %}" class="btn btn-secondary mt-3">Indietro</a>
+   </form>
+   <div class="table-container mt-4">
+      <table class="table table-striped">
+         <thead>
+            <tr>
+               <th>Nome</th>
+               <th>Capienza</th>
+               <th>Azioni</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for screeningroom in page_obj %}
+            <tr>
+               <td>{{ screeningroom.name }}</td>
+               <td>{{ screeningroom.capacity }}</td>
+               <td>
+                  <a href="{% url 'edit_screeningroom' screeningroom.id %}" class="btn btn-primary btn-sm">Modifica</a>
+                  <a href="{% url 'delete_screeningroom' screeningroom.id %}" class="btn btn-danger btn-sm">Elimina</a>
+               </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </div>
+   <nav aria-label="Page navigation example">
+      <ul class="pagination">
+         {% if page_obj.has_previous %}
+         <li class="page-item">
+            <a class="page-link" href="?{% if name %}name={{ name }}&{% endif %}{% if capacity %}capacity={{ capacity }}&{% endif %}page=1" aria-label="First">
+            <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
+         </li>
+         <li class="page-item">
+            <a class="page-link" href="?{% if name %}name={{ name }}&{% endif %}{% if capacity %}capacity={{ capacity }}&{% endif %}page={{ page_obj.previous_page_number }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+         </li>
+         {% endif %}
+         {% for num in page_obj.paginator.page_range %}
+         {% if page_obj.number == num %}
+         <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+         {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+         <li class="page-item"><a class="page-link" href="?{% if name %}name={{ name }}&{% endif %}{% if capacity %}capacity={{ capacity }}&{% endif %}page={{ num }}">{{ num }}</a></li>
+         {% endif %}
+         {% endfor %}
+         {% if page_obj.has_next %}
+         <li class="page-item">
+            <a class="page-link" href="?{% if name %}name={{ name }}&{% endif %}{% if capacity %}capacity={{ capacity }}&{% endif %}page={{ page_obj.next_page_number }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            </a>
+         </li>
+         <li class="page-item">
+            <a class="page-link" href="?{% if name %}name={{ name }}&{% endif %}{% if capacity %}capacity={{ capacity }}&{% endif %}page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+            <span aria-hidden="true">&raquo;&raquo;</span>
+            </a>
+         </li>
+         {% endif %}
+      </ul>
+   </nav>
+</div>
+{% endblock %}

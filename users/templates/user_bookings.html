@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+   <head>
+      <title>Le mie prenotazioni</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="icon" type="image/png" href="{% static 'img/logoIcon.png' %}">
+      <link href="{% static 'css/stylesUserBookings.css' %}" rel="stylesheet">
+   </head>
+   <body>
+      <h2 class="text-center mt-4">Le mie prenotazioni</h2>
+      <div class="container">
+         <div class="btn-container">
+            <a href="{% url 'home' %}" class="btn btn-secondary">Indietro</a>
+         </div>
+         <table class="table table-striped">
+            <thead>
+               <tr>
+                  <th>Orario e Giorno</th>
+                  <th>Nome Film</th>
+                  <th>Sala</th>
+                  <th>Posti</th>
+               </tr>
+            </thead>
+            <tbody>
+               {% for booking in page_obj %}
+               <tr>
+                  <td>{{ booking.screening.start_time }}</td>
+                  <td>{{ booking.screening.movie.title }}</td>
+                  <td>{{ booking.screening.room.name }}</td>
+                  <td>{{ booking.seat_numbers }}</td>
+               </tr>
+               {% empty %}
+               <tr>
+                  <td colspan="4">Non ci sono prenotazioni.</td>
+               </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+         <!-- Paginazione -->
+         <nav aria-label="Page navigation example">
+            <ul class="pagination">
+               {% if page_obj.has_previous %}
+               <li class="page-item">
+                  <a class="page-link" href="?page=1" aria-label="First">
+                  <span aria-hidden="true">&laquo;&laquo;</span>
+                  </a>
+               </li>
+               <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  </a>
+               </li>
+               {% endif %}
+               {% for num in page_obj.paginator.page_range %}
+               {% if page_obj.number == num %}
+               <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+               {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+               <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+               {% endif %}
+               {% endfor %}
+               {% if page_obj.has_next %}
+               <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  </a>
+               </li>
+               <li class="page-item">
+                  <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                  <span aria-hidden="true">&raquo;&raquo;</span>
+                  </a>
+               </li>
+               {% endif %}
+            </ul>
+         </nav>
+      </div>
+   </body>
+</html>

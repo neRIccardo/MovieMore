@@ -1,0 +1,18 @@
+{% extends "baseUser.html"%}
+{% load crispy_forms_tags %}
+
+{%block title%}
+Modifica profilo
+{%endblock%}
+
+{%block h%}
+        Modifica profilo
+{%endblock%}
+
+{%block action%}
+Salva
+{%endblock%}
+
+{%block href%}
+<a href="{% url 'profile' %}" class="btn btn-secondary" style="margin-top:10px;">Indietro</a>
+{%endblock%}

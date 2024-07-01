@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Profilo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="{% static 'img/logoIcon.png' %}">
+    <style>
+        .container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        body {
+            background-color: #212529;
+            color: #333;
+        }
+        .toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1050;
+        }
+    </style>
+</head>
+<body>
+    <div class="toast-container">
+        {% for message in messages %}
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+            <div class="toast-header">
+                <strong class="mr-auto">{{ message.tags|title }}</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body">
+                {{ message }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="container">
+        <h2>Profilo Utente</h2>
+        <div>
+            {% if profile.profile_picture %}
+            <img src="{{ profile.profile_picture.url }}" alt="mdo" width="120" height="120" class="rounded-circle" style="margin-bottom:20px;margin-top:10px;">
+            {% else %}
+            <img src="{% static 'profile_pictures/default_profile_picture.png' %}" alt="mdo" width="120" height="120" class="rounded-circle" style="margin-bottom:20px;margin-top:10px;">
+            {% endif %}
+            <p><strong>Username: </strong> {{ profile.user.username }}</p>
+            <p><strong>Nome: </strong> {{ profile.first_name }}</p>
+            <p><strong>Cognome: </strong> {{ profile.last_name }}</p>
+            <p><strong>Email: </strong> {{ profile.email }}</p>
+        </div>
+        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Modifica</a>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Indietro</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            var toastList = toastElList.map(function(toastEl) {
+                return new bootstrap.Toast(toastEl, { autohide: true, delay: 4000 });
+            });
+            toastList.forEach(toast => toast.show());
+        });
+     </script>
+</body>
+</html>

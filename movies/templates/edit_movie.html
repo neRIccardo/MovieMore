@@ -1,0 +1,37 @@
+{% extends "baseMovies.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block title%}
+    Modifica Film
+{%endblock%}
+
+{%block style%}
+    .container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    body {
+        background-color: #212529;
+        color: #333;
+    }
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-top: 20px;
+    }
+{%endblock%}
+    
+{%block view%}
+    <h2>Modifica Film</h2>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Salva modifiche</button>
+        </form>
+        <a href="{%url 'list_movies'%}" class="btn btn-secondary mt-1">Indietro</a>
+    </div>
+{%endblock%}

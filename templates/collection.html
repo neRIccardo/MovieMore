@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link href="{% static 'css/stylesCollection.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+Collezione
+{% endblock %}
+{% block active %}
+<li class="navActive nav-item"><a href={% url 'home' %} class="operationsNavAct nav-link" aria-current="page">Home</a></li>
+<li class="nav-item"><a href="{% url 'scheduling' %}" class="operationsNav nav-link ">Programmazione</a></li>
+<li class="nav-item"><a href="{% url 'collection' %}" class="operationsNav nav-link active">Collezione</a></li>
+{% endblock %}
+{% block view %}
+<div class="container mt-5">
+   <h1>Ricerca proiezioni</h1>
+   <form method="get" class="row g-3">
+      <div class="col-md-5">
+         <label for="id_title" class="form-label mt-2">Titolo</label>
+         <input type="text" name="title" id="id_title" class="form-control" placeholder="Titolo del film" value="{{ form.title.value|default_if_none:'' }}">
+      </div>
+      <div class="col-md-5">
+         <label for="id_start_date" class="form-label mt-2">Data iniziale</label>
+         <input type="date" name="start_date" id="id_start_date" class="form-control" value="{{ form.start_date.value }}">
+      </div>
+      <div class="col-md-5">
+         <label for="id_genre" class="form-label mt-2">Genere</label>
+         <input type="text" name="genre" id="id_genre" class="form-control" placeholder="Genere" value="{{ form.genre.value|default_if_none:'' }}">
+      </div>
+      <div class="col-md-5">
+         <label for="id_end_date" class="form-label mt-2">Data finale</label>
+         <input type="date" name="end_date" id="id_end_date" class="form-control" value="{{ form.end_date.value }}">
+      </div>
+      <div class="col-md-5">
+         <label for="id_order_by" class="form-label mt-2">Ordina per</label>
+         <select name="order_by" id="id_order_by" class="form-control">
+            <option value="">Scegli...</option>
+            {% for value, display in form.order_by.field.choices %}
+            <option value="{{ value }}" {% if form.order_by.value == value %}selected{% endif %}>{{ display }}</option>
+            {% endfor %}
+         </select>
+      </div>
+      <div class="col-md-4">
+         <button type="submit" class="btncerca btn btn-primary">Cerca</button>
+      </div>
+   </form>
+   {% if searched %}
+   <h2 class="mt-5">Risultati della ricerca</h2>
+   <div class="table-responsive">
+      <table class="table table-striped">
+         <thead>
+            <tr>
+               <th>Titolo</th>
+               <th>Genere</th>
+               <th>Data proiezione</th>
+               <th>Ora proiezione</th>
+               <th>Azione</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for screening in page_obj %}
+            <tr>
+               <td>{{ screening.movie.title }}</td>
+               <td>{{ screening.movie.genre }}</td>
+               <td>{{ screening.start_time|date:"d-m-Y" }}</td>
+               <td>{{ screening.start_time|date:"H:i" }}</td>
+               <td>
+                  {% if user.is_authenticated %}
+                  {% if screening.remaining_seats > 0 %}
+                  <a href="{% url 'purchase_tickets' screening.id %}" class="btnacquista btn btn-success">Acquista</a>
+                  {% else %}
+                  <span class="text-danger">Sold Out</span>
+                  {% endif %}
+                  {% else %}
+                  <a href="{% url 'login' %}" class="btnacquista btn btn-warning">Acquista</a>
+                  {% endif %}
+               </td>
+            </tr>
+            {% empty %}
+            <tr>
+               <td colspan="5">Nessun film trovato.</td>
+            </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </div>
+   <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+         {% if page_obj.has_previous %}
+         <li class="page-item">
+            <a class="page-link" href="?{% if request.GET.title %}title={{ request.GET.title }}&{% endif %}{% if request.GET.genre %}genre={{ request.GET.genre }}&{% endif %}{% if request.GET.start_date %}start_date={{ request.GET.start_date }}&{% endif %}{% if request.GET.end_date %}end_date={{ request.GET.end_date }}&{% endif %}{% if request.GET.order_by %}order_by={{ request.GET.order_by }}&{% endif %}page=1" aria-label="First">
+            <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
+         </li>
+         <li class="page-item">
+            <a class="page-link" href="?{% if request.GET.title %}title={{ request.GET.title }}&{% endif %}{% if request.GET.genre %}genre={{ request.GET.genre }}&{% endif %}{% if request.GET.start_date %}start_date={{ request.GET.start_date }}&{% endif %}{% if request.GET.end_date %}end_date={{ request.GET.end_date }}&{% endif %}{% if request.GET.order_by %}order_by={{ request.GET.order_by }}&{% endif %}page={{ page_obj.previous_page_number }}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            </a>
+         </li>
+         {% else %}
+         <li class="page-item disabled">
+            <span class="page-link">&laquo;&laquo;</span>
+         </li>
+         <li class="page-item disabled">
+            <span class="page-link">&laquo;</span>
+         </li>
+         {% endif %}
+         {% for num in page_obj.paginator.page_range %}
+         {% if page_obj.number == num %}
+         <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+         <li class="page-item"><a class="page-link" href="?{% if request.GET.title %}title={{ request.GET.title }}&{% endif %}{% if request.GET.genre %}genre={{ request.GET.genre }}&{% endif %}{% if request.GET.start_date %}start_date={{ request.GET.start_date }}&{% endif %}{% if request.GET.end_date %}end_date={{ request.GET.end_date }}&{% endif %}{% if request.GET.order_by %}order_by={{ request.GET.order_by }}&{% endif %}page={{ num }}">{{ num }}</a></li>
+         {% endif %}
+         {% endfor %}
+         {% if page_obj.has_next %}
+         <li class="page-item">
+            <a class="page-link" href="?{% if request.GET.title %}title={{ request.GET.title }}&{% endif %}{% if request.GET.genre %}genre={{ request.GET.genre }}&{% endif %}{% if request.GET.start_date %}start_date={{ request.GET.start_date }}&{% endif %}{% if request.GET.end_date %}end_date={{ request.GET.end_date }}&{% endif %}{% if request.GET.order_by %}order_by={{ request.GET.order_by }}&{% endif %}page={{ page_obj.next_page_number }}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            </a>
+         </li>
+         <li class="page-item">
+            <a class="page-link" href="?{% if request.GET.title %}title={{ request.GET.title }}&{% endif %}{% if request.GET.genre %}genre={{ request.GET.genre }}&{% endif %}{% if request.GET.start_date %}start_date={{ request.GET.start_date }}&{% endif %}{% if request.GET.end_date %}end_date={{ request.GET.end_date }}&{% endif %}{% if request.GET.order_by %}order_by={{ request.GET.order_by }}&{% endif %}page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+            <span aria-hidden="true">&raquo;&raquo;</span>
+            </a>
+         </li>
+         {% else %}
+         <li class="page-item disabled">
+            <span class="page-link">&raquo;</span>
+         </li>
+         <li class="page-item disabled">
+            <span class="page-link">&raquo;&raquo;</span>
+         </li>
+         {% endif %}
+      </ul>
+   </nav>
+   {% endif %}
+</div>
+{% endblock %}

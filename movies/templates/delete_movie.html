@@ -1,0 +1,31 @@
+{% extends "baseMovies.html" %}
+{% load static %}
+
+{%block title%}
+    Conferma Eliminazione
+{%endblock%}
+
+{%block style%}
+    body {
+        background-color: #212529;
+        color: #333;
+    }
+    h2 {
+        color: #fff;
+    }
+    p {
+        color: #fff;
+    }
+{%endblock%}
+    
+{%block view%}
+        <div class="container mt-5">
+            <h2>Conferma Eliminazione</h2>
+            <p>Sei sicuro di voler eliminare il film <strong>{{ movie.title }}</strong>?</p>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" name="confirm" class="btn btn-danger">Conferma</button>
+                <a href="{% url 'list_movies' %}" class="btn btn-secondary">Annulla</a>
+            </form>
+        </div>
+{%endblock%}

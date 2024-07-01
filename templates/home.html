@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{%block css%}
+<link href="{% static 'css/stylesHome.css' %}" rel="stylesheet">
+{%endblock%}
+{%block title%}
+Moviemore
+{%endblock%}
+{%block active%}
+<li class="navActive nav-item"><a href={%url 'home' %} class="operationsNavAct nav-link active" aria-current="page">Home</a></li>
+<li class="nav-item"><a href="{%url 'scheduling' %}" class="operationsNav nav-link ">Programmazione</a></li>
+<li class="nav-item"><a href="{%url 'collection' %}" class="operationsNav nav-link">Collezione</a></li>
+{%endblock%}
+{%block view%}
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+   <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+   </div>
+   <div class="carousel-inner">
+      <div class="carousel1 carousel-item active">
+         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+         </svg>
+         <div class="container">
+            <div class="carousel-caption text-start">
+               {%if user.is_authenticated%}
+               <h1>Benvenuto su MovieMore {{user.username}}!</h1>
+               <p> E' un piacere riverderti, dai un'occhiata alle nuove uscite e alla programmazione settimanale.<br>Occhio a non perderti nulla!</p>
+               <p><a class="btnSignUpCarousel btn btn-lg btn-primary" href="{% url 'scheduling' %}">Andiamo!</a></p>
+               {%else%}
+               <h1>Benvenuto su MovieMore!</h1>
+               <p>Registrati per ususfruire dei servizi di prenotazione dei film ed acquisto dei biglietti.<br>Entra subito a far parte della nostra mervigliosa community.</p>
+               <p><a class="btnSignUpCarousel btn btn-lg btn-primary" href="{% url 'signup' %}">Registati oggi!</a></p>
+               {%endif%}
+            </div>
+         </div>
+      </div>
+      <div class="carousel2 carousel-item">
+         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+         </svg>
+         <div class="container">
+            <div class="carousel-caption">
+               <h1>Ti stiamo aspettando!</h1>
+               {%if user.is_authenticated%}
+               <p>Controlla i tuoi biglietti ed i tuoi acquisti per restare sempre aggiornato!</p>
+               <p><a class="btnSignUpCarousel btn btn-lg btn-primary" href="{%url 'user_bookings'%}">Scopri di più</a></p>
+               {%else%}
+               <p>Scopri la programmazione settimanale dei film pronti per essere proiettati nelle nostre fantastiche sale.<br>Non farteli sfuggire!</p>
+               <p><a class="btnSignUpCarousel btn btn-lg btn-primary" href="{% url 'scheduling' %}">Scopri di più</a></p>
+               {%endif%}
+            </div>
+         </div>
+      </div>
+      <div class="carousel3 carousel-item">
+         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+         </svg>
+         <div class="container">
+            <div class="carousel-caption text-end">
+               <h1>Ammira la film-collection completa!</h1>
+               <p>Immergiti nella grandissima collezione di film di MovieMore.<br>Trova ciò che desideri e scopri eventuali proiezioni future.</p>
+               <p><a class="btnSignUpCarousel btn btn-lg btn-primary" href="{%url 'collection' %}">Maggiori informazioni</a></p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Previous</span>
+   </button>
+   <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   <span class="visually-hidden">Next</span>
+   </button>
+</div>
+<div class="container px-10 py-10" id="icon-grid">
+   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start">
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-film me-4" viewBox="0 0 16 16" color="white">
+            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm4 0v6h8V1zm8 8H4v6h8zM1 1v2h2V1zm2 3H1v2h2zM1 7v2h2V7zm2 3H1v2h2zm-2 3v2h2v-2zM15 1h-2v2h2zm-2 3v2h2V4zm2 3h-2v2h2zm-2 3v2h2v-2zm2 3h-2v2h2z"/>
+         </svg>
+         <div>
+            <h3 class="header3 fw-bold mb-2 fs-4">Nuovi Film<br>ogni giorno</h3>
+            <p>Prenota il tuo posto per le nuove uscite e per i numerosi film in programma</p>
+         </div>
+      </div>
+      <div class="col d-flex align-items-start">
+         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-house-check-fill me-4 pb-2" viewBox="0 0 16 16" color="white">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514"/>
+         </svg>
+         <div>
+            <h3 class="header3 fw-bold mb-2 fs-4">Siediti comodo,<br>sentiti come a casa</h3>
+            <p>Gustati la visione all'interno delle nostre spaziose sale e goditi i nostri servizi</p>
+         </div>
+      </div>
+      <div class="col d-flex align-items-start">
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-speaker-fill me-4" viewBox="0 0 16 16" color="white">
+            <path d="M9 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-2.5 6.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0"/>
+            <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0M8 7a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7"/>
+         </svg>
+         <div>
+            <h3 class="header3 fw-bold mb-2 fs-4">Audio di nuova<br>generazione</h3>
+            <p>Fatti trasportare dagli effetti sonori ed ambientali di Dolby Atmos</p>
+         </div>
+      </div>
+      <div class="col d-flex align-items-start">
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-camera-reels-fill me-4" viewBox="0 0 16 16" color="white">
+            <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+            <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+         </svg>
+         <div>
+            <h3 class="header3 fw-bold mb-2 fs-4">Qualità video<br>di prima classe</h3>
+            <p>Fatti travolgere da scene mozzafiato grazie alle proiezioni in 4K HDR</p>
+         </div>
+      </div>
+   </div>
+</div>
+{%endblock%}

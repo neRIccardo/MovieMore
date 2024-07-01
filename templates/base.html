@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="it">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{%block title%} {% endblock %}</title>
+      <link rel="icon" type="image/png" href=" {%static 'img/logoIcon.png'%}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+      {%block css%}
+      {%endblock%}
+      <style>
+         #toast-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1055;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="toast-container">
+         {% if messages %}
+         {% for message in messages %}
+         <div class="toast align-items-center text-bg-{{ message.tags|default:'info' }} border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+               <div class="toast-body">
+                  {{ message }}
+               </div>
+               <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+         </div>
+         {% endfor %}
+         {% endif %}
+      </div>
+      </div>
+      <div class="mainContainer container">
+         <header class="mainHeader d-flex flex-wrap justify-content-center py-3 mb-4">
+            <a href="{% url 'home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img  src="{% static 'img/logo.jpg' %}" alt="Logo" class="logo fs-4">
+            </a>    
+            <ul class="nav nav-pills">
+               {%block active%}
+               {%endblock%}
+            </ul>
+            <div class="authentication col-md-3 text-end">
+               {% if user.is_authenticated %}
+               <div class="flex-shrink-0 dropdown mb-5" style="margin-right:300px;">
+                  <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  {% if user.userprofile.profile_picture %}
+                  <img src="{{ user.userprofile.profile_picture.url }}" alt="mdo" width="40" height="40" class="rounded-circle">
+                  {% else %}
+                  <img src="{% static 'profile_pictures/default_profile_picture.png' %}" alt="mdo" width="40" height="40" class="rounded-circle">
+                  {% endif %}
+                  </a>
+                  <ul class="dropdown-menu text-small shadow">
+                     <li><a class="dropdown-item" href="{%url 'user_bookings'%}">I miei acquisti</a></li>
+                     <li><a class="dropdown-item" href="{%url 'profile'%}">Profilo</a></li>
+                     {% if is_admin_cinema %}
+                     <li><a class="dropdown-item" href="{%url 'management'%}">Pannello amministratori</a></li>
+                     {%endif%}
+                     <li>
+                        <hr class="dropdown-divider">
+                     </li>
+                     <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
+                        {% csrf_token %}
+                     </form>
+                     <li>
+                        <a class="dropdown-item" href="{% url 'logout' %}">
+                           Logout
+                           <svg style="margin-left: 60px; margin-bottom: 3px;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                           </svg>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+               {% else %}
+               <a href="{% url 'login' %}" class="authenticationBtn btn btn-outline-primary me-2">Accedi</a>
+               <a href="{% url 'signup' %}" class="authenticationBtn btn btn-primary">Registrati</a>
+               {% endif %}
+            </div>
+         </header>
+      </div>
+      {%block view%}
+      {%endblock%}
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+      <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+             var toastList = toastElList.map(function(toastEl) {
+                 return new bootstrap.Toast(toastEl, { autohide: true, delay: 4000 });
+             });
+             toastList.forEach(toast => toast.show());
+         });
+      </script>
+   </body>
+</html>

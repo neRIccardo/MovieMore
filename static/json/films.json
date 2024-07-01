@@ -1,0 +1,268 @@
+[
+    {
+        "model": "movies.movie",
+        "pk": 1,
+        "fields": {
+            "title": "Inception",
+            "description": "Un ladro che ruba segreti aziendali attraverso l'uso della tecnologia di condivisione dei sogni.",
+            "poster": "static/posters/inception.jpg",
+            "release_date": "2010-07-16",
+            "cast": "Leonardo DiCaprio, Joseph Gordon Levitt, Ellen Page",
+            "duration": 148,
+            "genre": "Fantascienza",
+            "director": "Christopher Nolan"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 2,
+        "fields": {
+            "title": "The Dark Knight",
+            "description": "Quando la minaccia conosciuta come il Joker emerge dal suo misterioso passato, semina il caos e l'anarchia tra la gente di Gotham.",
+            "poster": "static/posters/dark_knight.jpg",
+            "release_date": "2008-07-18",
+            "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
+            "duration": 152,
+            "genre": "Azione",
+            "director": "Christopher Nolan"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 3,
+        "fields": {
+            "title": "Interstellar",
+            "description": "Un team di esploratori viaggia attraverso un wormhole nello spazio nel tentativo di garantire la sopravvivenza dell'umanità.",
+            "poster": "static/posters/interstellar.jpg",
+            "release_date": "2014-11-07",
+            "cast": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+            "duration": 169,
+            "genre": "Fantascienza",
+            "director": "Christopher Nolan"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 4,
+        "fields": {
+            "title": "The Shawshank Redemption",
+            "description": "Due uomini imprigionati legano nel corso di diversi anni, trovando conforto e redenzione attraverso atti di comune decenza.",
+            "poster": "static/posters/shawshank_redemption.jpg",
+            "release_date": "1994-10-14",
+            "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
+            "duration": 142,
+            "genre": "Drammatico",
+            "director": "Frank Darabont"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 5,
+        "fields": {
+            "title": "Pulp Fiction",
+            "description": "Le vite di due sicari della mafia, un pugile, la moglie di un gangster e una coppia di banditi da tavola si intrecciano in quattro racconti di violenza e redenzione.",
+            "poster": "static/posters/pulp_fiction.jpg",
+            "release_date": "1994-10-14",
+            "cast": "John Travolta, Uma Thurman, Samuel Jackson",
+            "duration": 154,
+            "genre": "Crimine",
+            "director": "Quentin Tarantino"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 6,
+        "fields": {
+            "title": "Forrest Gump",
+            "description": "Le presidenze di Kennedy e Johnson, la guerra del Vietnam, lo scandalo Watergate e altri eventi storici si svolgono dalla prospettiva di un uomo dell'Alabama con un QI di 75, il cui unico desiderio è riunirsi con il suo amore d'infanzia.",
+            "poster": "static/posters/forrest_gump.jpg",
+            "release_date": "1994-07-06",
+            "cast": "Tom Hanks, Robin Wright, Gary Sinise",
+            "duration": 142,
+            "genre": "Drammatico",
+            "director": "Robert Zemeckis"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 7,
+        "fields": {
+            "title": "Il padrino",
+            "description": "Il patriarca invecchiato di una dinastia del crimine organizzato trasferisce il controllo del suo impero clandestino al suo figlio riluttante.",
+            "poster": "static/posters/godfather.jpg",
+            "release_date": "1972-03-24",
+            "cast": "Marlon Brando, Al Pacino, James Caan",
+            "duration": 175,
+            "genre": "Crimine",
+            "director": "Francis Ford Coppola"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 8,
+        "fields": {
+            "title": "Il signore degli anelli: Il ritorno del re",
+            "description": "Gandalf e Aragorn guidano il Mondo degli Uomini contro l'esercito di Sauron per distogliere il suo sguardo da Frodo e Sam mentre si avvicinano al Monte Fato con l'Unico Anello.",
+            "poster": "static/posters/return_of_the_king.jpg",
+            "release_date": "2003-12-17",
+            "cast": "Elijah Wood, Viggo Mortensen, Ian McKellen",
+            "duration": 201,
+            "genre": "Fantasy",
+            "director": "Peter Jackson"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 9,
+        "fields": {
+            "title": "Matrix",
+            "description": "Un hacker informatico apprende da ribelli misteriosi la vera natura della sua realtà e il suo ruolo nella guerra contro i suoi controllori.",
+            "poster": "static/posters/matrix.jpg",
+            "release_date": "1999-03-31",
+            "cast": "Keanu Reeves, Laurence Fishburne, Carrie Anne Moss",
+            "duration": 136,
+            "genre": "Fantascienza",
+            "director": "The Wachowskis"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 10,
+        "fields": {
+            "title": "Fight Club",
+            "description": "Un impiegato insonne e un saponificatore che non si cura formano un club di lotta clandestino che si trasforma in qualcosa di molto, molto di più.",
+            "poster": "static/posters/fight_club.jpg",
+            "release_date": "1999-10-15",
+            "cast": "Brad Pitt, Edward Norton, Helena Bonham Carter",
+            "duration": 139,
+            "genre": "Drammatico",
+            "director": "David Fincher"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 11,
+        "fields": {
+            "title": "Il Silenzio degli Innocenti",
+            "description": "Un giovane cadetto dell'FBI deve ricevere l'aiuto di un assassino cannibale incarcerato e manipolatore per aiutare a catturare un altro serial killer, un folle che scuoia le sue vittime.",
+            "poster": "static/posters/silence_of_the_lambs.jpg",
+            "release_date": "1991-02-14",
+            "cast": "Jodie Foster, Anthony Hopkins, Scott Glenn",
+            "duration": 118,
+            "genre": "Crimine",
+            "director": "Jonathan Demme"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 12,
+        "fields": {
+            "title": "Quei Bravi Ragazzi",
+            "description": "La storia di Henry Hill e della sua vita nella mafia, che copre la sua relazione con sua moglie Karen Hill e i suoi partner mafiosi Jimmy Conway e Tommy DeVito nella syndicate criminale italo-americana.",
+            "poster": "static/posters/goodfellas.jpg",
+            "release_date": "1990-09-19",
+            "cast": "Robert De Niro, Ray Liotta, Joe Pesci",
+            "duration": 146,
+            "genre": "Crimine",
+            "director": "Martin Scorsese"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 13,
+        "fields": {
+            "title": "La Lista di Schindler",
+            "description": "Nella Polonia occupata dai tedeschi durante la seconda guerra mondiale, l'industriale Oskar Schindler gradualmente si preoccupa per la sua forza lavoro ebraica dopo averne testimoniato la persecuzione da parte dei nazisti.",
+            "poster": "static/posters/schindlers_list.jpg",
+            "release_date": "1994-12-15",
+            "cast": "Liam Neeson, Ben Kingsley, Ralph Fiennes",
+            "duration": 195,
+            "genre": "Biografia",
+            "director": "Steven Spielberg"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 14,
+        "fields": {
+            "title": "Il Miglio Verde",
+            "description": "Le vite delle guardie in Death Row sono influenzate da uno dei loro detenuti: un uomo nero accusato di omicidio di bambini e stupro, eppure che ha un dono misterioso.",
+            "poster": "static/posters/green_mile.jpg",
+            "release_date": "1999-12-10",
+            "cast": "Tom Hanks, Michael Clarke Duncan, David Morse",
+            "duration": 189,
+            "genre": "Crimine",
+            "director": "Frank Darabont"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 15,
+        "fields": {
+            "title": "Salvate il Soldato Ryan",
+            "description": "Dopo lo sbarco in Normandia, un gruppo di soldati americani va oltre le linee nemiche per recuperare un paracadutista i cui fratelli sono stati uccisi in azione.",
+            "poster": "static/posters/saving_private_ryan.jpg",
+            "release_date": "1998-07-24",
+            "cast": "Tom Hanks, Matt Damon, Tom Sizemore",
+            "duration": 169,
+            "genre": "Guerra",
+            "director": "Steven Spielberg"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 16,
+        "fields": {
+            "title": "Il Sesto Senso",
+            "description": "Un ragazzo che comunica con gli spiriti cerca l'aiuto di uno psicologo per bambini scoraggiato.",
+            "poster": "static/posters/sixth_sense.jpg",
+            "release_date": "1999-08-06",
+            "cast": "Bruce Willis, Haley Joel Osment, Toni Collette",
+            "duration": 107,
+            "genre": "Drammatico",
+            "director": "Night Shyamalan"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 17,
+        "fields": {
+            "title": "Gladiatore",
+            "description": "Un ex generale romano parte per vendicarsi del corrotto imperatore che ha assassinato la sua famiglia e lo ha mandato in schiavitù.",
+            "poster": "static/posters/gladiator.jpg",
+            "release_date": "2000-05-05",
+            "cast": "Russell Crowe, Joaquin Phoenix, Connie Nielsen",
+            "duration": 155,
+            "genre": "Azione",
+            "director": "Ridley Scott"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 18,
+        "fields": {
+            "title": "Bastardi Senza Gloria",
+            "description": "Nella Francia occupata dai nazisti durante la seconda guerra mondiale, un piano per assassinare i leader nazisti da parte di un gruppo di soldati ebrei americani coincide con i piani vendicativi di un proprietario di teatro.",
+            "poster": "static/posters/inglourious_basterds.jpg",
+            "release_date": "2009-08-21",
+            "cast": "Brad Pitt, Christoph Waltz, Michael Fassbender",
+            "duration": 153,
+            "genre": "Guerra",
+            "director": "Quentin Tarantino"
+        }
+    },
+    {
+        "model": "movies.movie",
+        "pk": 19,
+        "fields": {
+            "title": "The Social Network",
+            "description": "Lo studente di Harvard Mark Zuckerberg crea il sito di social networking che diventerà noto come Facebook, ma in seguito viene citato in giudizio da due fratelli che sostenevano che avesse rubato la loro idea e dal co-fondatore che successivamente viene escluso dall'azienda.",
+            "poster": "static/posters/social_network.jpg",
+            "release_date": "2010-10-01",
+            "cast": "Jesse Eisenberg, Andrew Garfield, Justin Timberlake",
+            "duration": 120,
+            "genre": "Biografia",
+            "director": "David Fincher"
+        }
+    }
+]
