@@ -4,9 +4,9 @@
         "pk": 1,
         "fields": {
             "movie": 1,
-            "room": 10,
-            "start_time": "2024-07-23T19:45:00Z",
-            "price": 1.95
+            "room": 7,
+            "start_time": "2024-07-14T23:30:00Z",
+            "price": 4.95
         }
     },
     {
@@ -14,9 +14,9 @@
         "pk": 2,
         "fields": {
             "movie": 1,
-            "room": 4,
-            "start_time": "2024-06-30T23:45:00Z",
-            "price": 3.01
+            "room": 2,
+            "start_time": "2024-07-05T19:45:00Z",
+            "price": 1.04
         }
     },
     {
@@ -24,9 +24,9 @@
         "pk": 3,
         "fields": {
             "movie": 1,
-            "room": 8,
-            "start_time": "2024-07-18T20:45:00Z",
-            "price": 1.74
+            "room": 4,
+            "start_time": "2024-07-08T23:45:00Z",
+            "price": 7.21
         }
     },
     {
@@ -34,9 +34,9 @@
         "pk": 4,
         "fields": {
             "movie": 1,
-            "room": 2,
-            "start_time": "2024-07-28T19:45:00Z",
-            "price": 5.78
+            "room": 1,
+            "start_time": "2024-07-30T22:15:00Z",
+            "price": 2.08
         }
     },
     {
@@ -44,9 +44,9 @@
         "pk": 5,
         "fields": {
             "movie": 1,
-            "room": 4,
-            "start_time": "2024-07-07T19:45:00Z",
-            "price": 7.1
+            "room": 7,
+            "start_time": "2024-07-23T17:45:00Z",
+            "price": 1.48
         }
     },
     {
@@ -54,9 +54,9 @@
         "pk": 6,
         "fields": {
             "movie": 2,
-            "room": 10,
-            "start_time": "2024-07-23T17:00:00Z",
-            "price": 9.08
+            "room": 3,
+            "start_time": "2024-07-09T21:15:00Z",
+            "price": 9.76
         }
     },
     {
@@ -64,9 +64,9 @@
         "pk": 7,
         "fields": {
             "movie": 2,
-            "room": 1,
-            "start_time": "2024-07-01T19:15:00Z",
-            "price": 8.55
+            "room": 7,
+            "start_time": "2024-07-10T23:30:00Z",
+            "price": 9.26
         }
     },
     {
@@ -74,9 +74,9 @@
         "pk": 8,
         "fields": {
             "movie": 2,
-            "room": 3,
-            "start_time": "2024-07-01T20:45:00Z",
-            "price": 9.52
+            "room": 6,
+            "start_time": "2024-07-27T21:30:00Z",
+            "price": 5.65
         }
     },
     {
@@ -84,9 +84,9 @@
         "pk": 9,
         "fields": {
             "movie": 2,
-            "room": 2,
-            "start_time": "2024-07-27T21:15:00Z",
-            "price": 7.54
+            "room": 8,
+            "start_time": "2024-07-12T20:00:00Z",
+            "price": 8.1
         }
     },
     {
@@ -94,9 +94,9 @@
         "pk": 10,
         "fields": {
             "movie": 2,
-            "room": 5,
-            "start_time": "2024-07-10T20:00:00Z",
-            "price": 7.75
+            "room": 10,
+            "start_time": "2024-07-21T19:45:00Z",
+            "price": 1.69
         }
     },
     {
@@ -104,9 +104,9 @@
         "pk": 11,
         "fields": {
             "movie": 3,
-            "room": 10,
-            "start_time": "2024-07-20T19:00:00Z",
-            "price": 1.16
+            "room": 4,
+            "start_time": "2024-07-16T21:00:00Z",
+            "price": 4.65
         }
     },
     {
@@ -115,8 +115,8 @@
         "fields": {
             "movie": 3,
             "room": 2,
-            "start_time": "2024-07-07T22:15:00Z",
-            "price": 1.08
+            "start_time": "2024-07-18T18:15:00Z",
+            "price": 4.6
         }
     },
     {
@@ -124,9 +124,9 @@
         "pk": 13,
         "fields": {
             "movie": 3,
-            "room": 3,
-            "start_time": "2024-07-16T21:45:00Z",
-            "price": 1.32
+            "room": 8,
+            "start_time": "2024-07-31T19:30:00Z",
+            "price": 9.38
         }
     },
     {
@@ -134,9 +134,9 @@
         "pk": 14,
         "fields": {
             "movie": 3,
-            "room": 4,
-            "start_time": "2024-07-26T23:45:00Z",
-            "price": 4.88
+            "room": 7,
+            "start_time": "2024-07-29T21:30:00Z",
+            "price": 1.2
         }
     },
     {
@@ -144,9 +144,9 @@
         "pk": 15,
         "fields": {
             "movie": 3,
-            "room": 10,
-            "start_time": "2024-07-04T21:15:00Z",
-            "price": 7.09
+            "room": 1,
+            "start_time": "2024-07-14T20:15:00Z",
+            "price": 7.34
         }
     },
     {
@@ -154,9 +154,9 @@
         "pk": 16,
         "fields": {
             "movie": 4,
-            "room": 10,
-            "start_time": "2024-07-09T21:45:00Z",
-            "price": 3.8
+            "room": 2,
+            "start_time": "2024-07-22T21:00:00Z",
+            "price": 7.67
         }
     },
     {
@@ -164,9 +164,9 @@
         "pk": 17,
         "fields": {
             "movie": 4,
-            "room": 6,
-            "start_time": "2024-07-20T22:15:00Z",
-            "price": 5.19
+            "room": 8,
+            "start_time": "2024-07-17T22:45:00Z",
+            "price": 4.15
         }
     },
     {
@@ -174,9 +174,9 @@
         "pk": 18,
         "fields": {
             "movie": 4,
-            "room": 4,
-            "start_time": "2024-07-15T21:15:00Z",
-            "price": 1.99
+            "room": 9,
+            "start_time": "2024-07-10T20:45:00Z",
+            "price": 9.25
         }
     },
     {
@@ -184,9 +184,9 @@
         "pk": 19,
         "fields": {
             "movie": 4,
-            "room": 1,
-            "start_time": "2024-07-28T22:00:00Z",
-            "price": 1.45
+            "room": 9,
+            "start_time": "2024-07-12T20:30:00Z",
+            "price": 6.79
         }
     },
     {
@@ -194,9 +194,9 @@
         "pk": 20,
         "fields": {
             "movie": 4,
-            "room": 8,
-            "start_time": "2024-07-10T20:00:00Z",
-            "price": 3.65
+            "room": 2,
+            "start_time": "2024-07-19T17:45:00Z",
+            "price": 6.3
         }
     },
     {
@@ -204,9 +204,9 @@
         "pk": 21,
         "fields": {
             "movie": 5,
-            "room": 4,
-            "start_time": "2024-07-12T19:15:00Z",
-            "price": 4.45
+            "room": 6,
+            "start_time": "2024-07-05T20:30:00Z",
+            "price": 1.63
         }
     },
     {
@@ -215,8 +215,8 @@
         "fields": {
             "movie": 5,
             "room": 6,
-            "start_time": "2024-07-29T22:45:00Z",
-            "price": 1.26
+            "start_time": "2024-07-16T21:00:00Z",
+            "price": 3.53
         }
     },
     {
@@ -224,9 +224,9 @@
         "pk": 23,
         "fields": {
             "movie": 5,
-            "room": 2,
-            "start_time": "2024-07-09T20:30:00Z",
-            "price": 7.48
+            "room": 3,
+            "start_time": "2024-07-20T18:30:00Z",
+            "price": 8.4
         }
     },
     {
@@ -234,9 +234,9 @@
         "pk": 24,
         "fields": {
             "movie": 5,
-            "room": 10,
-            "start_time": "2024-07-28T21:15:00Z",
-            "price": 3.49
+            "room": 8,
+            "start_time": "2024-07-22T21:30:00Z",
+            "price": 8.13
         }
     },
     {
@@ -244,9 +244,9 @@
         "pk": 25,
         "fields": {
             "movie": 5,
-            "room": 8,
-            "start_time": "2024-07-08T18:00:00Z",
-            "price": 2.28
+            "room": 3,
+            "start_time": "2024-07-24T19:30:00Z",
+            "price": 1.08
         }
     },
     {
@@ -254,9 +254,9 @@
         "pk": 26,
         "fields": {
             "movie": 6,
-            "room": 3,
-            "start_time": "2024-07-04T18:15:00Z",
-            "price": 1.45
+            "room": 10,
+            "start_time": "2024-07-08T20:30:00Z",
+            "price": 8.61
         }
     },
     {
@@ -265,8 +265,8 @@
         "fields": {
             "movie": 6,
             "room": 8,
-            "start_time": "2024-07-04T17:00:00Z",
-            "price": 4.53
+            "start_time": "2024-07-02T19:30:00Z",
+            "price": 9.09
         }
     },
     {
@@ -274,9 +274,9 @@
         "pk": 28,
         "fields": {
             "movie": 6,
-            "room": 10,
-            "start_time": "2024-07-02T21:00:00Z",
-            "price": 5.1
+            "room": 6,
+            "start_time": "2024-07-24T22:00:00Z",
+            "price": 7.97
         }
     },
     {
@@ -284,9 +284,9 @@
         "pk": 29,
         "fields": {
             "movie": 6,
-            "room": 9,
-            "start_time": "2024-07-05T19:15:00Z",
-            "price": 2.73
+            "room": 8,
+            "start_time": "2024-07-24T22:30:00Z",
+            "price": 4.06
         }
     },
     {
@@ -294,9 +294,9 @@
         "pk": 30,
         "fields": {
             "movie": 6,
-            "room": 3,
-            "start_time": "2024-07-30T17:15:00Z",
-            "price": 1.81
+            "room": 10,
+            "start_time": "2024-07-24T23:00:00Z",
+            "price": 5.33
         }
     },
     {
@@ -304,9 +304,9 @@
         "pk": 31,
         "fields": {
             "movie": 7,
-            "room": 2,
-            "start_time": "2024-07-12T19:45:00Z",
-            "price": 1.9
+            "room": 4,
+            "start_time": "2024-07-31T21:45:00Z",
+            "price": 2.93
         }
     },
     {
@@ -314,9 +314,9 @@
         "pk": 32,
         "fields": {
             "movie": 7,
-            "room": 5,
-            "start_time": "2024-07-05T23:45:00Z",
-            "price": 8.51
+            "room": 10,
+            "start_time": "2024-07-10T22:45:00Z",
+            "price": 8.37
         }
     },
     {
@@ -324,9 +324,9 @@
         "pk": 33,
         "fields": {
             "movie": 7,
-            "room": 1,
-            "start_time": "2024-07-29T20:45:00Z",
-            "price": 5.55
+            "room": 6,
+            "start_time": "2024-07-03T21:45:00Z",
+            "price": 3.82
         }
     },
     {
@@ -334,9 +334,9 @@
         "pk": 34,
         "fields": {
             "movie": 7,
-            "room": 8,
-            "start_time": "2024-07-23T17:45:00Z",
-            "price": 1.86
+            "room": 2,
+            "start_time": "2024-07-07T18:00:00Z",
+            "price": 1.6
         }
     },
     {
@@ -344,9 +344,9 @@
         "pk": 35,
         "fields": {
             "movie": 7,
-            "room": 1,
-            "start_time": "2024-07-15T18:30:00Z",
-            "price": 9.8
+            "room": 9,
+            "start_time": "2024-07-20T23:30:00Z",
+            "price": 1.59
         }
     },
     {
@@ -354,9 +354,9 @@
         "pk": 36,
         "fields": {
             "movie": 8,
-            "room": 4,
-            "start_time": "2024-07-10T21:30:00Z",
-            "price": 4.23
+            "room": 2,
+            "start_time": "2024-07-13T23:45:00Z",
+            "price": 8.27
         }
     },
     {
@@ -364,9 +364,9 @@
         "pk": 37,
         "fields": {
             "movie": 8,
-            "room": 8,
-            "start_time": "2024-07-13T22:45:00Z",
-            "price": 5.27
+            "room": 4,
+            "start_time": "2024-07-20T20:15:00Z",
+            "price": 7.27
         }
     },
     {
@@ -374,9 +374,9 @@
         "pk": 38,
         "fields": {
             "movie": 8,
-            "room": 10,
-            "start_time": "2024-07-16T20:30:00Z",
-            "price": 8.05
+            "room": 3,
+            "start_time": "2024-07-11T23:15:00Z",
+            "price": 8.21
         }
     },
     {
@@ -384,9 +384,9 @@
         "pk": 39,
         "fields": {
             "movie": 8,
-            "room": 9,
-            "start_time": "2024-07-15T18:45:00Z",
-            "price": 1.1
+            "room": 4,
+            "start_time": "2024-07-05T18:00:00Z",
+            "price": 2.38
         }
     },
     {
@@ -394,9 +394,9 @@
         "pk": 40,
         "fields": {
             "movie": 8,
-            "room": 9,
-            "start_time": "2024-06-30T22:00:00Z",
-            "price": 3.35
+            "room": 6,
+            "start_time": "2024-07-20T22:00:00Z",
+            "price": 3.22
         }
     },
     {
@@ -404,9 +404,9 @@
         "pk": 41,
         "fields": {
             "movie": 9,
-            "room": 10,
-            "start_time": "2024-07-20T22:45:00Z",
-            "price": 4.24
+            "room": 6,
+            "start_time": "2024-07-08T18:15:00Z",
+            "price": 4.08
         }
     },
     {
@@ -414,9 +414,9 @@
         "pk": 42,
         "fields": {
             "movie": 9,
-            "room": 9,
-            "start_time": "2024-07-13T22:15:00Z",
-            "price": 4.61
+            "room": 4,
+            "start_time": "2024-07-05T21:45:00Z",
+            "price": 7.91
         }
     },
     {
@@ -424,9 +424,9 @@
         "pk": 43,
         "fields": {
             "movie": 9,
-            "room": 3,
-            "start_time": "2024-07-03T20:45:00Z",
-            "price": 1.01
+            "room": 2,
+            "start_time": "2024-07-06T23:15:00Z",
+            "price": 6.8
         }
     },
     {
@@ -434,9 +434,9 @@
         "pk": 44,
         "fields": {
             "movie": 9,
-            "room": 7,
-            "start_time": "2024-07-01T19:30:00Z",
-            "price": 9.08
+            "room": 10,
+            "start_time": "2024-07-02T19:45:00Z",
+            "price": 7.01
         }
     },
     {
@@ -444,9 +444,9 @@
         "pk": 45,
         "fields": {
             "movie": 9,
-            "room": 4,
-            "start_time": "2024-07-10T17:45:00Z",
-            "price": 7.28
+            "room": 10,
+            "start_time": "2024-07-16T23:30:00Z",
+            "price": 9.76
         }
     },
     {
@@ -454,9 +454,9 @@
         "pk": 46,
         "fields": {
             "movie": 10,
-            "room": 2,
-            "start_time": "2024-07-20T20:45:00Z",
-            "price": 6.02
+            "room": 1,
+            "start_time": "2024-07-04T22:15:00Z",
+            "price": 9.84
         }
     },
     {
@@ -464,9 +464,9 @@
         "pk": 47,
         "fields": {
             "movie": 10,
-            "room": 2,
-            "start_time": "2024-06-30T21:30:00Z",
-            "price": 9.17
+            "room": 3,
+            "start_time": "2024-07-13T18:00:00Z",
+            "price": 6.35
         }
     },
     {
@@ -474,9 +474,9 @@
         "pk": 48,
         "fields": {
             "movie": 10,
-            "room": 10,
-            "start_time": "2024-07-26T18:30:00Z",
-            "price": 3.82
+            "room": 2,
+            "start_time": "2024-07-11T17:15:00Z",
+            "price": 8.35
         }
     },
     {
@@ -484,9 +484,9 @@
         "pk": 49,
         "fields": {
             "movie": 10,
-            "room": 8,
-            "start_time": "2024-07-10T23:45:00Z",
-            "price": 1.28
+            "room": 9,
+            "start_time": "2024-07-02T21:00:00Z",
+            "price": 9.02
         }
     },
     {
@@ -494,9 +494,9 @@
         "pk": 50,
         "fields": {
             "movie": 10,
-            "room": 1,
-            "start_time": "2024-07-24T20:30:00Z",
-            "price": 3.25
+            "room": 10,
+            "start_time": "2024-07-27T17:15:00Z",
+            "price": 3.29
         }
     },
     {
@@ -504,9 +504,9 @@
         "pk": 51,
         "fields": {
             "movie": 11,
-            "room": 9,
-            "start_time": "2024-07-14T20:15:00Z",
-            "price": 9.94
+            "room": 1,
+            "start_time": "2024-07-02T23:45:00Z",
+            "price": 7.45
         }
     },
     {
@@ -514,9 +514,9 @@
         "pk": 52,
         "fields": {
             "movie": 11,
-            "room": 4,
-            "start_time": "2024-07-03T17:45:00Z",
-            "price": 1.57
+            "room": 8,
+            "start_time": "2024-07-12T18:00:00Z",
+            "price": 8.3
         }
     },
     {
@@ -524,9 +524,9 @@
         "pk": 53,
         "fields": {
             "movie": 11,
-            "room": 6,
-            "start_time": "2024-07-16T20:15:00Z",
-            "price": 4.48
+            "room": 9,
+            "start_time": "2024-07-27T17:30:00Z",
+            "price": 6.39
         }
     },
     {
@@ -534,9 +534,9 @@
         "pk": 54,
         "fields": {
             "movie": 11,
-            "room": 4,
-            "start_time": "2024-07-29T23:30:00Z",
-            "price": 9.13
+            "room": 2,
+            "start_time": "2024-07-04T18:00:00Z",
+            "price": 4.33
         }
     },
     {
@@ -545,8 +545,8 @@
         "fields": {
             "movie": 11,
             "room": 6,
-            "start_time": "2024-07-04T23:30:00Z",
-            "price": 3.12
+            "start_time": "2024-07-03T18:00:00Z",
+            "price": 7.18
         }
     },
     {
@@ -554,9 +554,9 @@
         "pk": 56,
         "fields": {
             "movie": 12,
-            "room": 7,
-            "start_time": "2024-07-18T21:45:00Z",
-            "price": 9.45
+            "room": 1,
+            "start_time": "2024-07-10T17:15:00Z",
+            "price": 7.26
         }
     },
     {
@@ -564,9 +564,9 @@
         "pk": 57,
         "fields": {
             "movie": 12,
-            "room": 6,
-            "start_time": "2024-07-22T21:15:00Z",
-            "price": 9.06
+            "room": 3,
+            "start_time": "2024-07-25T23:00:00Z",
+            "price": 4.16
         }
     },
     {
@@ -574,9 +574,9 @@
         "pk": 58,
         "fields": {
             "movie": 12,
-            "room": 7,
-            "start_time": "2024-07-21T21:00:00Z",
-            "price": 6.43
+            "room": 9,
+            "start_time": "2024-07-24T23:30:00Z",
+            "price": 7.75
         }
     },
     {
@@ -585,8 +585,8 @@
         "fields": {
             "movie": 12,
             "room": 2,
-            "start_time": "2024-07-05T23:15:00Z",
-            "price": 9.74
+            "start_time": "2024-07-05T22:45:00Z",
+            "price": 3.89
         }
     },
     {
@@ -594,9 +594,9 @@
         "pk": 60,
         "fields": {
             "movie": 12,
-            "room": 2,
-            "start_time": "2024-07-11T19:15:00Z",
-            "price": 7.16
+            "room": 8,
+            "start_time": "2024-07-07T22:15:00Z",
+            "price": 1.55
         }
     },
     {
@@ -604,9 +604,9 @@
         "pk": 61,
         "fields": {
             "movie": 13,
-            "room": 3,
-            "start_time": "2024-07-04T22:45:00Z",
-            "price": 9.96
+            "room": 4,
+            "start_time": "2024-07-17T19:00:00Z",
+            "price": 5.52
         }
     },
     {
@@ -614,9 +614,9 @@
         "pk": 62,
         "fields": {
             "movie": 13,
-            "room": 1,
-            "start_time": "2024-07-05T22:00:00Z",
-            "price": 8.92
+            "room": 4,
+            "start_time": "2024-07-07T20:15:00Z",
+            "price": 1.95
         }
     },
     {
@@ -624,9 +624,9 @@
         "pk": 63,
         "fields": {
             "movie": 13,
-            "room": 7,
-            "start_time": "2024-07-04T23:00:00Z",
-            "price": 2.63
+            "room": 8,
+            "start_time": "2024-07-11T18:45:00Z",
+            "price": 8.04
         }
     },
     {
@@ -634,9 +634,9 @@
         "pk": 64,
         "fields": {
             "movie": 13,
-            "room": 6,
-            "start_time": "2024-07-28T19:45:00Z",
-            "price": 7.64
+            "room": 3,
+            "start_time": "2024-07-28T20:30:00Z",
+            "price": 7.66
         }
     },
     {
@@ -644,9 +644,9 @@
         "pk": 65,
         "fields": {
             "movie": 13,
-            "room": 5,
-            "start_time": "2024-07-27T21:30:00Z",
-            "price": 9.94
+            "room": 10,
+            "start_time": "2024-07-12T18:45:00Z",
+            "price": 3.34
         }
     },
     {
@@ -654,9 +654,9 @@
         "pk": 66,
         "fields": {
             "movie": 14,
-            "room": 5,
-            "start_time": "2024-07-23T22:45:00Z",
-            "price": 1.57
+            "room": 8,
+            "start_time": "2024-07-09T23:15:00Z",
+            "price": 1.12
         }
     },
     {
@@ -664,9 +664,9 @@
         "pk": 67,
         "fields": {
             "movie": 14,
-            "room": 5,
-            "start_time": "2024-07-14T20:15:00Z",
-            "price": 7.91
+            "room": 8,
+            "start_time": "2024-07-13T17:45:00Z",
+            "price": 5.14
         }
     },
     {
@@ -674,9 +674,9 @@
         "pk": 68,
         "fields": {
             "movie": 14,
-            "room": 3,
-            "start_time": "2024-07-09T22:30:00Z",
-            "price": 8.93
+            "room": 4,
+            "start_time": "2024-07-18T20:00:00Z",
+            "price": 3.81
         }
     },
     {
@@ -684,9 +684,9 @@
         "pk": 69,
         "fields": {
             "movie": 14,
-            "room": 6,
-            "start_time": "2024-07-02T18:30:00Z",
-            "price": 9.77
+            "room": 7,
+            "start_time": "2024-07-07T23:30:00Z",
+            "price": 7.91
         }
     },
     {
@@ -694,9 +694,9 @@
         "pk": 70,
         "fields": {
             "movie": 14,
-            "room": 9,
-            "start_time": "2024-07-07T21:15:00Z",
-            "price": 8.66
+            "room": 1,
+            "start_time": "2024-07-16T17:30:00Z",
+            "price": 2.38
         }
     },
     {
@@ -704,9 +704,9 @@
         "pk": 71,
         "fields": {
             "movie": 15,
-            "room": 7,
-            "start_time": "2024-07-14T20:15:00Z",
-            "price": 3.84
+            "room": 10,
+            "start_time": "2024-07-14T21:45:00Z",
+            "price": 2.86
         }
     },
     {
@@ -714,9 +714,9 @@
         "pk": 72,
         "fields": {
             "movie": 15,
-            "room": 8,
-            "start_time": "2024-07-05T22:15:00Z",
-            "price": 1.43
+            "room": 2,
+            "start_time": "2024-07-13T17:30:00Z",
+            "price": 4.33
         }
     },
     {
@@ -724,9 +724,9 @@
         "pk": 73,
         "fields": {
             "movie": 15,
-            "room": 10,
-            "start_time": "2024-07-21T21:30:00Z",
-            "price": 8.15
+            "room": 3,
+            "start_time": "2024-07-30T20:45:00Z",
+            "price": 3.5
         }
     },
     {
@@ -734,9 +734,9 @@
         "pk": 74,
         "fields": {
             "movie": 15,
-            "room": 9,
-            "start_time": "2024-07-04T20:15:00Z",
-            "price": 1.16
+            "room": 1,
+            "start_time": "2024-07-21T19:45:00Z",
+            "price": 3.5
         }
     },
     {
@@ -744,9 +744,9 @@
         "pk": 75,
         "fields": {
             "movie": 15,
-            "room": 7,
-            "start_time": "2024-07-24T22:45:00Z",
-            "price": 6.45
+            "room": 5,
+            "start_time": "2024-07-14T18:00:00Z",
+            "price": 4.47
         }
     },
     {
@@ -754,9 +754,9 @@
         "pk": 76,
         "fields": {
             "movie": 16,
-            "room": 4,
-            "start_time": "2024-07-13T18:45:00Z",
-            "price": 1.09
+            "room": 7,
+            "start_time": "2024-07-19T20:30:00Z",
+            "price": 6.19
         }
     },
     {
@@ -764,9 +764,9 @@
         "pk": 77,
         "fields": {
             "movie": 16,
-            "room": 10,
-            "start_time": "2024-07-08T19:45:00Z",
-            "price": 7.48
+            "room": 8,
+            "start_time": "2024-07-26T21:15:00Z",
+            "price": 8.53
         }
     },
     {
@@ -774,9 +774,9 @@
         "pk": 78,
         "fields": {
             "movie": 16,
-            "room": 1,
-            "start_time": "2024-07-17T23:15:00Z",
-            "price": 6.48
+            "room": 8,
+            "start_time": "2024-07-24T19:00:00Z",
+            "price": 9.75
         }
     },
     {
@@ -784,9 +784,9 @@
         "pk": 79,
         "fields": {
             "movie": 16,
-            "room": 4,
-            "start_time": "2024-07-23T23:00:00Z",
-            "price": 6.97
+            "room": 10,
+            "start_time": "2024-07-22T21:15:00Z",
+            "price": 7.21
         }
     },
     {
@@ -794,9 +794,9 @@
         "pk": 80,
         "fields": {
             "movie": 16,
-            "room": 8,
-            "start_time": "2024-07-15T18:45:00Z",
-            "price": 8.8
+            "room": 5,
+            "start_time": "2024-07-12T21:15:00Z",
+            "price": 3.12
         }
     },
     {
@@ -805,8 +805,8 @@
         "fields": {
             "movie": 17,
             "room": 3,
-            "start_time": "2024-07-11T20:00:00Z",
-            "price": 7.28
+            "start_time": "2024-07-11T18:00:00Z",
+            "price": 2.21
         }
     },
     {
@@ -814,9 +814,9 @@
         "pk": 82,
         "fields": {
             "movie": 17,
-            "room": 3,
-            "start_time": "2024-07-26T21:00:00Z",
-            "price": 6.71
+            "room": 1,
+            "start_time": "2024-07-19T23:45:00Z",
+            "price": 4.76
         }
     },
     {
@@ -824,9 +824,9 @@
         "pk": 83,
         "fields": {
             "movie": 17,
-            "room": 10,
-            "start_time": "2024-07-19T22:45:00Z",
-            "price": 5.95
+            "room": 6,
+            "start_time": "2024-07-12T23:00:00Z",
+            "price": 9.54
         }
     },
     {
@@ -834,9 +834,9 @@
         "pk": 84,
         "fields": {
             "movie": 17,
-            "room": 2,
-            "start_time": "2024-07-26T21:45:00Z",
-            "price": 9.35
+            "room": 4,
+            "start_time": "2024-07-03T17:30:00Z",
+            "price": 3.52
         }
     },
     {
@@ -844,9 +844,9 @@
         "pk": 85,
         "fields": {
             "movie": 17,
-            "room": 10,
-            "start_time": "2024-07-06T20:45:00Z",
-            "price": 5.97
+            "room": 3,
+            "start_time": "2024-07-28T17:00:00Z",
+            "price": 7.73
         }
     },
     {
@@ -854,9 +854,9 @@
         "pk": 86,
         "fields": {
             "movie": 18,
-            "room": 4,
-            "start_time": "2024-07-07T22:15:00Z",
-            "price": 3.37
+            "room": 6,
+            "start_time": "2024-07-28T19:30:00Z",
+            "price": 3.25
         }
     },
     {
@@ -864,9 +864,9 @@
         "pk": 87,
         "fields": {
             "movie": 18,
-            "room": 7,
-            "start_time": "2024-07-10T18:00:00Z",
-            "price": 4.1
+            "room": 4,
+            "start_time": "2024-07-01T23:15:00Z",
+            "price": 4.41
         }
     },
     {
@@ -875,8 +875,8 @@
         "fields": {
             "movie": 18,
             "room": 5,
-            "start_time": "2024-07-06T22:30:00Z",
-            "price": 8.96
+            "start_time": "2024-07-01T19:45:00Z",
+            "price": 3.11
         }
     },
     {
@@ -884,9 +884,9 @@
         "pk": 89,
         "fields": {
             "movie": 18,
-            "room": 8,
-            "start_time": "2024-07-26T19:15:00Z",
-            "price": 5.89
+            "room": 10,
+            "start_time": "2024-07-23T22:45:00Z",
+            "price": 1.18
         }
     },
     {
@@ -894,9 +894,9 @@
         "pk": 90,
         "fields": {
             "movie": 18,
-            "room": 3,
-            "start_time": "2024-07-16T17:30:00Z",
-            "price": 2.14
+            "room": 9,
+            "start_time": "2024-07-19T22:15:00Z",
+            "price": 6.39
         }
     },
     {
@@ -904,9 +904,9 @@
         "pk": 91,
         "fields": {
             "movie": 19,
-            "room": 5,
-            "start_time": "2024-07-11T21:00:00Z",
-            "price": 6.27
+            "room": 1,
+            "start_time": "2024-07-14T18:15:00Z",
+            "price": 6.08
         }
     },
     {
@@ -914,9 +914,9 @@
         "pk": 92,
         "fields": {
             "movie": 19,
-            "room": 3,
-            "start_time": "2024-07-10T19:45:00Z",
-            "price": 5.48
+            "room": 4,
+            "start_time": "2024-07-21T21:30:00Z",
+            "price": 2.09
         }
     },
     {
@@ -924,9 +924,9 @@
         "pk": 93,
         "fields": {
             "movie": 19,
-            "room": 2,
-            "start_time": "2024-07-29T17:30:00Z",
-            "price": 1.95
+            "room": 8,
+            "start_time": "2024-07-06T20:30:00Z",
+            "price": 1.28
         }
     },
     {
@@ -934,9 +934,9 @@
         "pk": 94,
         "fields": {
             "movie": 19,
-            "room": 3,
-            "start_time": "2024-07-25T23:00:00Z",
-            "price": 1.09
+            "room": 8,
+            "start_time": "2024-07-27T18:45:00Z",
+            "price": 8.71
         }
     },
     {
@@ -944,9 +944,9 @@
         "pk": 95,
         "fields": {
             "movie": 19,
-            "room": 4,
-            "start_time": "2024-07-02T19:45:00Z",
-            "price": 4.13
+            "room": 5,
+            "start_time": "2024-07-15T23:45:00Z",
+            "price": 2.26
         }
     }
 ]

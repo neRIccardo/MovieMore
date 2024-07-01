@@ -35,3 +35,10 @@ python manage.py runserver
 ### 5. Usage
 Once the server is running, you can access the cinema site and use the available features.
 Go to http://localhost:8000/ and start to explore.
+
+| Role                 | Username                                                                            | Password       |
+|----------------------|-------------------------------------------------------------------------------------|----------------|
+| Admin (superuser)    | AdminR                                                                              | progettocinema |
+| Cinema administrator | adm1 - adm2 - adm3                                                                  | progettocinema |
+| Registered User      | marco.rossi93 - giulia.bianchi21 - luca_espo89 - fran.romano88 - 	matteo.conti77   | progettocinema |
+| Guest                | /                                                                                   | /              |

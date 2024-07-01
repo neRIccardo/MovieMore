@@ -1,4 +1,3 @@
-# screenings/tests.py
 from django.test import TestCase
 from datetime import date, datetime
 from django.utils.timezone import make_aware

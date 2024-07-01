@@ -44,38 +44,41 @@ def init_movies():
         movie.save()
 
 
+import json
+from django.contrib.auth.models import User, Group
+
 def init_users():
     with open('static/json/users.json', 'r') as f:
         users_data = json.load(f)
 
-    group_admin = Group.objects.get(name='AmministratoriCinema')
-    group_standard = Group.objects.get(name='UtentiRegistrati')
+    # Creazione o recupero dei gruppi
+    group_admin, created = Group.objects.get_or_create(name='AmministratoriCinema')
+    group_standard, created = Group.objects.get_or_create(name='UtentiRegistrati')
 
-    try:
-        user = User.objects.get(username="AdminR")
-    except User.DoesNotExist:
-        superUser = User.objects.create_superuser(username="AdminR", password="progettocinema")
-        superUser.save()
-        superUser.groups.add(group_admin)
-    
+    # Creazione dell'utente superuser
+    superuser, created = User.objects.get_or_create(username="AdminR", defaults={'is_superuser': True, 'is_staff': True})
+    if created:
+        superuser.set_password("progettocinema")
+        superuser.save()
+    superuser.groups.add(group_admin)
+
+    # Creazione degli utenti admin
     for i in range(1, 4):
-        try:
-            user = User.objects.get(username=f"adm{i}")
-        except User.DoesNotExist:
-            adminUser = User.objects.create_user(username=f"adm{i}", password="progettocinema")
-            adminUser.save()
-            adminUser.groups.add(group_admin)
+        admin_user, created = User.objects.get_or_create(username=f"adm{i}")
+        if created:
+            admin_user.set_password("progettocinema")
+            admin_user.save()
+        admin_user.groups.add(group_admin)
 
+    # Creazione degli utenti standard
     for user_data in users_data:
         username = user_data['fields']['user']
         password = user_data['fields']['password']
-        
-        try:
-            user = User.objects.get(username=username)
-        except User.DoesNotExist:
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
 
+        user, created = User.objects.get_or_create(username=username)
+        if created:
+            user.set_password(password)
+            user.save()
         user.groups.add(group_standard)
 
 
