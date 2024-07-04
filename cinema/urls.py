@@ -44,6 +44,3 @@ urlpatterns = [
     #-----CATTURA ERRORI-----#
     re_path(r'^.*$', custom_404_view)
 ]
-
-erase_db()
-init_db()

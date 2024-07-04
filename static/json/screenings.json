@@ -1,0 +1,952 @@
+[
+    {
+        "model": "screenings.screening",
+        "pk": 1,
+        "fields": {
+            "movie": 1,
+            "room": 3,
+            "start_time": "2024-07-26T18:00:00Z",
+            "price": 1.34
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 2,
+        "fields": {
+            "movie": 1,
+            "room": 2,
+            "start_time": "2024-08-02T18:30:00Z",
+            "price": 9.85
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 3,
+        "fields": {
+            "movie": 1,
+            "room": 1,
+            "start_time": "2024-07-29T20:15:00Z",
+            "price": 2.62
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 4,
+        "fields": {
+            "movie": 1,
+            "room": 2,
+            "start_time": "2024-08-01T19:45:00Z",
+            "price": 1.92
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 5,
+        "fields": {
+            "movie": 1,
+            "room": 1,
+            "start_time": "2024-08-01T21:00:00Z",
+            "price": 3.68
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 6,
+        "fields": {
+            "movie": 2,
+            "room": 7,
+            "start_time": "2024-07-30T17:00:00Z",
+            "price": 5.89
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 7,
+        "fields": {
+            "movie": 2,
+            "room": 7,
+            "start_time": "2024-08-02T23:45:00Z",
+            "price": 2.91
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 8,
+        "fields": {
+            "movie": 2,
+            "room": 4,
+            "start_time": "2024-07-28T17:45:00Z",
+            "price": 8.11
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 9,
+        "fields": {
+            "movie": 2,
+            "room": 10,
+            "start_time": "2024-07-23T18:30:00Z",
+            "price": 1.58
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 10,
+        "fields": {
+            "movie": 2,
+            "room": 6,
+            "start_time": "2024-07-14T21:15:00Z",
+            "price": 8.77
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 11,
+        "fields": {
+            "movie": 3,
+            "room": 10,
+            "start_time": "2024-07-07T20:00:00Z",
+            "price": 4.72
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 12,
+        "fields": {
+            "movie": 3,
+            "room": 8,
+            "start_time": "2024-07-24T23:00:00Z",
+            "price": 8.38
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 13,
+        "fields": {
+            "movie": 3,
+            "room": 5,
+            "start_time": "2024-07-23T23:15:00Z",
+            "price": 2.95
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 14,
+        "fields": {
+            "movie": 3,
+            "room": 1,
+            "start_time": "2024-07-12T18:00:00Z",
+            "price": 4.47
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 15,
+        "fields": {
+            "movie": 3,
+            "room": 10,
+            "start_time": "2024-07-31T22:45:00Z",
+            "price": 7.62
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 16,
+        "fields": {
+            "movie": 4,
+            "room": 5,
+            "start_time": "2024-07-07T19:30:00Z",
+            "price": 6.62
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 17,
+        "fields": {
+            "movie": 4,
+            "room": 2,
+            "start_time": "2024-07-29T21:30:00Z",
+            "price": 3.43
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 18,
+        "fields": {
+            "movie": 4,
+            "room": 10,
+            "start_time": "2024-07-09T18:45:00Z",
+            "price": 8.49
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 19,
+        "fields": {
+            "movie": 4,
+            "room": 8,
+            "start_time": "2024-07-11T20:45:00Z",
+            "price": 8.13
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 20,
+        "fields": {
+            "movie": 4,
+            "room": 10,
+            "start_time": "2024-07-21T23:45:00Z",
+            "price": 6.71
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 21,
+        "fields": {
+            "movie": 5,
+            "room": 8,
+            "start_time": "2024-07-16T19:45:00Z",
+            "price": 3.14
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 22,
+        "fields": {
+            "movie": 5,
+            "room": 2,
+            "start_time": "2024-07-08T20:15:00Z",
+            "price": 3.23
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 23,
+        "fields": {
+            "movie": 5,
+            "room": 2,
+            "start_time": "2024-07-23T23:30:00Z",
+            "price": 2.08
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 24,
+        "fields": {
+            "movie": 5,
+            "room": 9,
+            "start_time": "2024-07-08T17:30:00Z",
+            "price": 1.77
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 25,
+        "fields": {
+            "movie": 5,
+            "room": 5,
+            "start_time": "2024-07-16T19:45:00Z",
+            "price": 8.55
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 26,
+        "fields": {
+            "movie": 6,
+            "room": 3,
+            "start_time": "2024-07-24T18:45:00Z",
+            "price": 9.76
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 27,
+        "fields": {
+            "movie": 6,
+            "room": 2,
+            "start_time": "2024-08-02T21:15:00Z",
+            "price": 5.44
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 28,
+        "fields": {
+            "movie": 6,
+            "room": 7,
+            "start_time": "2024-07-24T23:15:00Z",
+            "price": 8.43
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 29,
+        "fields": {
+            "movie": 6,
+            "room": 4,
+            "start_time": "2024-07-14T23:45:00Z",
+            "price": 4.77
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 30,
+        "fields": {
+            "movie": 6,
+            "room": 4,
+            "start_time": "2024-07-20T17:00:00Z",
+            "price": 7.46
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 31,
+        "fields": {
+            "movie": 7,
+            "room": 3,
+            "start_time": "2024-07-05T18:30:00Z",
+            "price": 1.95
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 32,
+        "fields": {
+            "movie": 7,
+            "room": 9,
+            "start_time": "2024-07-23T23:15:00Z",
+            "price": 7.54
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 33,
+        "fields": {
+            "movie": 7,
+            "room": 9,
+            "start_time": "2024-07-29T17:45:00Z",
+            "price": 6.3
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 34,
+        "fields": {
+            "movie": 7,
+            "room": 10,
+            "start_time": "2024-07-31T17:00:00Z",
+            "price": 8.94
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 35,
+        "fields": {
+            "movie": 7,
+            "room": 9,
+            "start_time": "2024-07-09T23:15:00Z",
+            "price": 8.09
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 36,
+        "fields": {
+            "movie": 8,
+            "room": 5,
+            "start_time": "2024-07-05T21:45:00Z",
+            "price": 2.93
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 37,
+        "fields": {
+            "movie": 8,
+            "room": 6,
+            "start_time": "2024-07-06T21:30:00Z",
+            "price": 8.18
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 38,
+        "fields": {
+            "movie": 8,
+            "room": 8,
+            "start_time": "2024-07-18T21:30:00Z",
+            "price": 2.69
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 39,
+        "fields": {
+            "movie": 8,
+            "room": 1,
+            "start_time": "2024-07-21T17:45:00Z",
+            "price": 4.93
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 40,
+        "fields": {
+            "movie": 8,
+            "room": 2,
+            "start_time": "2024-07-30T21:15:00Z",
+            "price": 4.2
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 41,
+        "fields": {
+            "movie": 9,
+            "room": 3,
+            "start_time": "2024-07-23T18:45:00Z",
+            "price": 3.26
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 42,
+        "fields": {
+            "movie": 9,
+            "room": 8,
+            "start_time": "2024-07-31T17:30:00Z",
+            "price": 6.71
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 43,
+        "fields": {
+            "movie": 9,
+            "room": 3,
+            "start_time": "2024-07-09T20:00:00Z",
+            "price": 1.51
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 44,
+        "fields": {
+            "movie": 9,
+            "room": 6,
+            "start_time": "2024-08-03T22:45:00Z",
+            "price": 7.86
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 45,
+        "fields": {
+            "movie": 9,
+            "room": 7,
+            "start_time": "2024-07-21T21:00:00Z",
+            "price": 4.51
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 46,
+        "fields": {
+            "movie": 10,
+            "room": 7,
+            "start_time": "2024-07-30T23:30:00Z",
+            "price": 2.86
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 47,
+        "fields": {
+            "movie": 10,
+            "room": 5,
+            "start_time": "2024-07-04T20:15:00Z",
+            "price": 7.99
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 48,
+        "fields": {
+            "movie": 10,
+            "room": 9,
+            "start_time": "2024-07-26T19:15:00Z",
+            "price": 5.96
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 49,
+        "fields": {
+            "movie": 10,
+            "room": 5,
+            "start_time": "2024-07-09T20:00:00Z",
+            "price": 6.36
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 50,
+        "fields": {
+            "movie": 10,
+            "room": 7,
+            "start_time": "2024-07-28T17:15:00Z",
+            "price": 8.06
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 51,
+        "fields": {
+            "movie": 11,
+            "room": 10,
+            "start_time": "2024-07-28T21:00:00Z",
+            "price": 3.71
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 52,
+        "fields": {
+            "movie": 11,
+            "room": 2,
+            "start_time": "2024-07-13T20:15:00Z",
+            "price": 5.98
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 53,
+        "fields": {
+            "movie": 11,
+            "room": 4,
+            "start_time": "2024-07-21T21:30:00Z",
+            "price": 2.55
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 54,
+        "fields": {
+            "movie": 11,
+            "room": 1,
+            "start_time": "2024-07-27T23:30:00Z",
+            "price": 3.91
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 55,
+        "fields": {
+            "movie": 11,
+            "room": 9,
+            "start_time": "2024-07-31T23:00:00Z",
+            "price": 5.07
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 56,
+        "fields": {
+            "movie": 12,
+            "room": 9,
+            "start_time": "2024-07-20T18:30:00Z",
+            "price": 9.91
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 57,
+        "fields": {
+            "movie": 12,
+            "room": 1,
+            "start_time": "2024-07-17T18:00:00Z",
+            "price": 8.38
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 58,
+        "fields": {
+            "movie": 12,
+            "room": 7,
+            "start_time": "2024-07-05T22:30:00Z",
+            "price": 4.54
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 59,
+        "fields": {
+            "movie": 12,
+            "room": 2,
+            "start_time": "2024-07-09T17:00:00Z",
+            "price": 3.43
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 60,
+        "fields": {
+            "movie": 12,
+            "room": 8,
+            "start_time": "2024-07-07T23:00:00Z",
+            "price": 1.48
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 61,
+        "fields": {
+            "movie": 13,
+            "room": 7,
+            "start_time": "2024-07-09T17:00:00Z",
+            "price": 7.94
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 62,
+        "fields": {
+            "movie": 13,
+            "room": 8,
+            "start_time": "2024-07-05T17:15:00Z",
+            "price": 3.74
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 63,
+        "fields": {
+            "movie": 13,
+            "room": 9,
+            "start_time": "2024-08-03T21:45:00Z",
+            "price": 8.66
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 64,
+        "fields": {
+            "movie": 13,
+            "room": 4,
+            "start_time": "2024-07-17T21:30:00Z",
+            "price": 7.85
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 65,
+        "fields": {
+            "movie": 13,
+            "room": 10,
+            "start_time": "2024-07-08T21:30:00Z",
+            "price": 4.16
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 66,
+        "fields": {
+            "movie": 14,
+            "room": 1,
+            "start_time": "2024-07-26T17:00:00Z",
+            "price": 8.01
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 67,
+        "fields": {
+            "movie": 14,
+            "room": 4,
+            "start_time": "2024-07-29T23:15:00Z",
+            "price": 8.58
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 68,
+        "fields": {
+            "movie": 14,
+            "room": 10,
+            "start_time": "2024-07-29T22:00:00Z",
+            "price": 1.2
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 69,
+        "fields": {
+            "movie": 14,
+            "room": 7,
+            "start_time": "2024-08-03T20:15:00Z",
+            "price": 6.38
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 70,
+        "fields": {
+            "movie": 14,
+            "room": 5,
+            "start_time": "2024-08-02T22:30:00Z",
+            "price": 6.98
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 71,
+        "fields": {
+            "movie": 15,
+            "room": 9,
+            "start_time": "2024-07-15T21:00:00Z",
+            "price": 3.24
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 72,
+        "fields": {
+            "movie": 15,
+            "room": 8,
+            "start_time": "2024-07-30T20:30:00Z",
+            "price": 9.58
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 73,
+        "fields": {
+            "movie": 15,
+            "room": 7,
+            "start_time": "2024-07-20T17:30:00Z",
+            "price": 2.89
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 74,
+        "fields": {
+            "movie": 15,
+            "room": 1,
+            "start_time": "2024-07-09T20:30:00Z",
+            "price": 9.98
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 75,
+        "fields": {
+            "movie": 15,
+            "room": 3,
+            "start_time": "2024-07-06T20:15:00Z",
+            "price": 8.99
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 76,
+        "fields": {
+            "movie": 16,
+            "room": 1,
+            "start_time": "2024-07-14T21:00:00Z",
+            "price": 1.97
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 77,
+        "fields": {
+            "movie": 16,
+            "room": 8,
+            "start_time": "2024-07-25T19:45:00Z",
+            "price": 3.82
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 78,
+        "fields": {
+            "movie": 16,
+            "room": 1,
+            "start_time": "2024-07-30T20:15:00Z",
+            "price": 9.41
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 79,
+        "fields": {
+            "movie": 16,
+            "room": 6,
+            "start_time": "2024-08-01T19:00:00Z",
+            "price": 8.73
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 80,
+        "fields": {
+            "movie": 16,
+            "room": 7,
+            "start_time": "2024-07-16T21:30:00Z",
+            "price": 1.98
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 81,
+        "fields": {
+            "movie": 17,
+            "room": 5,
+            "start_time": "2024-07-19T19:00:00Z",
+            "price": 7.56
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 82,
+        "fields": {
+            "movie": 17,
+            "room": 3,
+            "start_time": "2024-07-20T17:15:00Z",
+            "price": 1.44
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 83,
+        "fields": {
+            "movie": 17,
+            "room": 9,
+            "start_time": "2024-07-22T18:15:00Z",
+            "price": 9.15
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 84,
+        "fields": {
+            "movie": 17,
+            "room": 7,
+            "start_time": "2024-07-04T23:45:00Z",
+            "price": 8.87
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 85,
+        "fields": {
+            "movie": 17,
+            "room": 6,
+            "start_time": "2024-07-30T18:00:00Z",
+            "price": 6.41
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 86,
+        "fields": {
+            "movie": 18,
+            "room": 10,
+            "start_time": "2024-07-12T22:45:00Z",
+            "price": 3.68
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 87,
+        "fields": {
+            "movie": 18,
+            "room": 6,
+            "start_time": "2024-07-21T20:15:00Z",
+            "price": 8.88
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 88,
+        "fields": {
+            "movie": 18,
+            "room": 9,
+            "start_time": "2024-07-31T19:45:00Z",
+            "price": 5.01
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 89,
+        "fields": {
+            "movie": 18,
+            "room": 4,
+            "start_time": "2024-07-11T21:00:00Z",
+            "price": 9.33
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 90,
+        "fields": {
+            "movie": 18,
+            "room": 10,
+            "start_time": "2024-07-16T17:15:00Z",
+            "price": 8.71
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 91,
+        "fields": {
+            "movie": 19,
+            "room": 3,
+            "start_time": "2024-07-24T22:30:00Z",
+            "price": 9.1
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 92,
+        "fields": {
+            "movie": 19,
+            "room": 4,
+            "start_time": "2024-08-02T17:00:00Z",
+            "price": 2.43
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 93,
+        "fields": {
+            "movie": 19,
+            "room": 6,
+            "start_time": "2024-07-25T19:45:00Z",
+            "price": 7.64
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 94,
+        "fields": {
+            "movie": 19,
+            "room": 8,
+            "start_time": "2024-07-25T22:30:00Z",
+            "price": 9.23
+        }
+    },
+    {
+        "model": "screenings.screening",
+        "pk": 95,
+        "fields": {
+            "movie": 19,
+            "room": 7,
+            "start_time": "2024-07-06T17:00:00Z",
+            "price": 7.39
+        }
+    }
+]
