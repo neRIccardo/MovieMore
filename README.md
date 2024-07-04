@@ -1,6 +1,6 @@
 # MovieMore project
 
-This project is a Django application to simulate a cinema website. It includes features for managing movies, theaters, bookings, and users.
+This project is a Django application to simulate a cinema website. It includes features for managing movies, screenings, screening rooms, bookings and users.
 
 
 ## Project Setup
@@ -15,7 +15,7 @@ cd MovieMore
 ### 2. Install pipenv
 
 Make sure pipenv is installed.
-Locally install dependencies, then open virtual-environment shell, with:
+Locally install dependencies, then open virtual-environment shell with:
 
 ```bash
 pipenv install
