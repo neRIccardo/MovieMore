@@ -1,13 +1,14 @@
 from cinema.views import *
 from django.http import Http404
 
-
+# Class based view per aggiungere in film
 class AddMovieView(AddItemView):
     model = Movie
     form_class = MovieForm
     template_name = 'add_movie.html'
     success_message = 'Film aggiunto con successo'
 
+# Class based view per modificare in film
 class EditMovieView(EditItemView):
     model = Movie
     form_class = MovieForm
@@ -15,12 +16,14 @@ class EditMovieView(EditItemView):
     success_message = 'Film modificato con successo'
     pk_url_kwarg = 'movie_id'
 
+# Class based view per eliminare in film
 class DeleteMovieView(DeleteItemView):
     model = Movie
     template_name = 'delete_movie.html'
     success_message = 'Film eliminato con successo'
     pk_url_kwarg = 'movie_id'
 
+# Class based view per visualizzare la lista dei film
 class MovieListView(CustomRequired, ListView):
     model = Movie
     template_name = 'list_movies.html'

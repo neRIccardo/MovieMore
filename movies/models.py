@@ -1,5 +1,6 @@
 from django.db import models
 
+# Classe che rappresenta un oggetto di tipo Movie
 class Movie(models.Model):
     title = models.CharField(max_length = 50, help_text="Titolo del film")
     description = models.TextField(help_text="Descrizione del film")

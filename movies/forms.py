@@ -1,10 +1,10 @@
 from django import forms
-
 from screenings.models import Screening
 from .models import Movie
 import re
 from datetime import datetime, timedelta
 
+# Form per l'aggiunta/modifica di un film
 class MovieForm(forms.ModelForm):
     class Meta:
         model = Movie
@@ -20,11 +20,12 @@ class MovieForm(forms.ModelForm):
             'director': 'Regista',
         }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs): # Funzione di inizializzazione
         super(MovieForm, self).__init__(*args, **kwargs)
         self.original_title = self.instance.title if self.instance.pk else None
         self.original_duration = self.instance.duration if self.instance.pk else None
 
+    # Funzione per controllare il titolo
     def clean_title(self):
         title = self.cleaned_data.get('title')
         if self.instance.pk and title == self.original_title:
@@ -33,6 +34,7 @@ class MovieForm(forms.ModelForm):
             raise forms.ValidationError("Un film con lo stesso titolo è già presente nel database.")
         return title
     
+    # Funzione per controllare la data di uscita
     def clean_release_date(self):
         release_date = self.cleaned_data.get('release_date')
         if not re.match(r'^\d{4}-\d{2}-\d{2}$', str(release_date)):
@@ -41,24 +43,28 @@ class MovieForm(forms.ModelForm):
             raise forms.ValidationError("La data di uscita non può essere maggiore della data odierna.")
         return release_date
 
+    # Funzione per controllare il regista
     def clean_director(self):
         director = self.cleaned_data.get('director')
         if any(char.isdigit() for char in director) or not re.match(r'^(\s*\b[a-zA-Z]+\b\s*)+$', director):
             raise forms.ValidationError("Regista non nel formato corretto")
         return director
     
+    # Funzione per controllare il genere
     def clean_genre(self):
         genre = self.cleaned_data.get('genre')
         if any(char.isdigit() for char in genre) or not re.match(r'^[A-Za-z]+(?:,\s[A-Za-z]+)*$', genre):
             raise forms.ValidationError("Genere non nel formato corretto")
         return genre
 
+    # Funzione per controllare il cast
     def clean_cast(self):
         cast = self.cleaned_data.get('cast')
         if any(char.isdigit() for char in cast) or not re.match(r'^(\s*\b\w+\s+\w+\b(\s+\w+)*\s*(,\s*\b\w+\s+\w+\b(\s+\w+)*\s*)*)$', cast):
             raise forms.ValidationError("Cast non nel formato corretto")
         return cast
 
+    # Funzione per controllare la durata
     def clean_duration(self):
         duration = self.cleaned_data.get('duration')
         if duration <= 0:
@@ -67,6 +73,7 @@ class MovieForm(forms.ModelForm):
             self.check_screening_overlaps(duration)
         return duration
 
+    # Funzione per controllare il poster
     def clean_poster(self):
         poster = self.cleaned_data.get('poster')
         if poster and hasattr(poster, 'content_type'):
@@ -74,6 +81,7 @@ class MovieForm(forms.ModelForm):
                 raise forms.ValidationError("Formato immagine non valido. Utilizza un formato di immagine valido.")
         return poster
 
+    # Funzione per controllare l'overlapping tra proiezioni
     def check_screening_overlaps(self, new_duration):
         screenings = Screening.objects.filter(movie=self.instance)
         for screening in screenings:
@@ -86,6 +94,7 @@ class MovieForm(forms.ModelForm):
             if overlapping_screenings.exists():
                 raise forms.ValidationError("La modifica della durata crea una sovrapposizione con una proiezione esistente.")
 
+# Form per la ricerca dei film
 class MovieSearchForm(forms.Form):
     title = forms.CharField(max_length=255, required=False, label='Titolo')
     cast = forms.CharField(max_length=255, required=False, label='Cast')

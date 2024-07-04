@@ -6,11 +6,12 @@ from django.contrib.auth.models import User, Group
 from django.db import connection
 from datetime import datetime, timedelta
 
+# Funzione per resettare l'id conuter delle tabelle
 def reset_id_counter(table_name):
     with connection.cursor() as cursor:
         cursor.execute(f"DELETE FROM sqlite_sequence WHERE name='{table_name}';")
 
-
+# Funzione per eliminare le cartelle generate caricando immagini profilo o posters dei film
 def delete_folders():
     folders = ["static/uploaded_posters", "static/uploaded_profile_pictures"]
     for folder in folders:
@@ -21,7 +22,7 @@ def delete_folders():
         except FileNotFoundError:
             pass
     
-
+# Funzione per popolare il database con i vari film
 def init_movies():
     if Movie.objects.exists():
         return
@@ -42,7 +43,7 @@ def init_movies():
         )
         movie.save()
 
-
+# Funzione per popolare il database con i vari utenti
 def init_users():
     with open('static/json/users.json', 'r') as f:
         users_data = json.load(f)
@@ -76,7 +77,7 @@ def init_users():
             user.save()
         user.groups.add(group_standard)
 
-
+# Funzione per popolare il database con le varie sale
 def init_screening_rooms():
     if ScreeningRoom.objects.exists():
         return
@@ -91,7 +92,7 @@ def init_screening_rooms():
         )
         screening_rooms.save()
 
-
+# Funzione per popolare il database con le varie proiezioni
 def init_screenings():
     with open('static/json/films.json', 'r') as f:
         movies_data = json.load(f)
@@ -169,7 +170,7 @@ def init_screenings():
             )
         screening.save()
 
-
+# Funzione per popolare il database con i vari acquisti
 def init_bookings():
     with open('static/json/users.json', 'r') as f:
         users_data = json.load(f)
@@ -203,8 +204,6 @@ def init_bookings():
     for user_data in users_data:
         user_pk = user_data['pk']
         username = user_data['fields']['user']
-        
-        user = User.objects.get(username=username)
         
         bookings_per_user = 0
         
@@ -260,7 +259,7 @@ def init_bookings():
         else:
             print(f"User or screening does not exist: user_id={user_id}, screening_id={screening_id}")
 
-
+# Funzione per resettare il database
 def erase_db():
     if 'test' in sys.argv:
         return  # Salta l'inizializzazione se si stanno eseguendo i test
@@ -277,7 +276,7 @@ def erase_db():
     
     print(f"Dati cancellati - Numero di record dopo cancellazione: Films: {Movie.objects.count()}, Screening Rooms: {ScreeningRoom.objects.count()}, Screenings: {Screening.objects.count()}, Users: {User.objects.count()}, Bookings: {Booking.objects.count()}")
 
-
+# Funzione per popolare il database
 def init_db():
     if 'test' in sys.argv:
         return  # Salta l'inizializzazione se si stanno eseguendo i test

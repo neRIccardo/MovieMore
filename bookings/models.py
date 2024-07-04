@@ -2,6 +2,7 @@ from django.db import models
 from screenings.models import Screening
 from django.contrib.auth.models import User
 
+# Classe che rappresenta un oggetto di tipo Booking
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
     screening = models.ForeignKey(Screening, on_delete=models.CASCADE, related_name='bookings')

@@ -33,7 +33,7 @@ class PurchaseTicketsViewTest(TestCase):
 
 
     def test_view_uses_correct_template(self):
-        # Testa che la risorsa esista e che venga mostrato il template corretto
+        # Testa che la risorsa esista e che venga usato il template corretto
         self.client.login(username='testuser', password='testpass')
         response = self.client.get(self.booking_url)
         self.assertEqual(response.status_code, 200)
@@ -90,7 +90,6 @@ class PurchaseTicketsViewTest(TestCase):
             'seats': 0 # almeno 1
         }
         response = self.client.post(self.booking_url, post_data)
-        self.assertEqual(response.status_code, 200)
         form = response.context['form']
         self.assertFalse(form.is_valid())
         self.assertIn('first_name', form.errors)

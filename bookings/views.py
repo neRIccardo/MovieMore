@@ -10,7 +10,7 @@ from .models import Screening, Booking
 from django.urls import reverse_lazy
 from cinema.views import custom_404_view, CustomRequired
 
-
+# Funzione per generare i numeri di posto in base a quanti posti ha acquistato l'utente
 def generate_seat_numbers(screening, num_seats):
     total_seats = list(range(1, screening.room.capacity + 1))
     booked_seats = screening.bookings.values_list('seat_numbers', flat=True)
@@ -22,14 +22,14 @@ def generate_seat_numbers(screening, num_seats):
 
     return random.sample(available_seats, num_seats)
 
-
+# Vista per l'acquisto di una proiezione
 class PurchaseTicketsView(CustomRequired, CreateView):
     model = Booking
     form_class = BookingForm
     template_name = 'purchase_ticket.html'
     group_required = None
     
-    def dispatch(self, *args, **kwargs):
+    def dispatch(self, *args, **kwargs): # Metodo che gestisce la logica di inizializzazione della vista e il controllo preliminare
         try:
             self.screening = get_object_or_404(Screening, id=self.kwargs['screening_id'])
         except Http404:
@@ -41,7 +41,7 @@ class PurchaseTicketsView(CustomRequired, CreateView):
             return redirect('home')
         return super().dispatch(*args, **kwargs)
 
-    def get_initial(self):
+    def get_initial(self): #  Metodo che restituisce i dati iniziali per il form
         user = self.request.user
         initial = super().get_initial()
         initial.update({
@@ -51,7 +51,7 @@ class PurchaseTicketsView(CustomRequired, CreateView):
         })
         return initial
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # Metodo che aggiunge dati aggiuntivi al contesto del template
         context = super().get_context_data(**kwargs)
         total_booked_seats = self.screening.bookings.aggregate(total=Sum('seats'))['total'] or 0
         available_seats = self.screening.room.capacity - total_booked_seats
@@ -61,7 +61,7 @@ class PurchaseTicketsView(CustomRequired, CreateView):
         })
         return context
 
-    def form_valid(self, form):
+    def form_valid(self, form): # Metodo chiamato quando i dati del form sono validi
         user = self.request.user
         form.instance.user = user
         form.instance.screening = self.screening
@@ -78,5 +78,5 @@ class PurchaseTicketsView(CustomRequired, CreateView):
             form.add_error('seats', 'Numero di posti richiesti non disponibile.')
             return self.form_invalid(form)
 
-    def get_success_url(self):
+    def get_success_url(self): # Metodo che restituisce l'URL di reindirizzamento dopo il completamento con successo dell'operazione di acquisto
         return reverse_lazy('home')

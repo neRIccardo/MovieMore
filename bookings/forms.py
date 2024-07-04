@@ -2,11 +2,12 @@ import datetime
 from django import forms
 from bookings.models import Booking
 
-
+# Funzione per verificare la correttezza del CVV
 def validate_cvv(value):
     if not value.isdigit() or len(value) != 3:
         raise forms.ValidationError("Il CVV deve essere composto da 3 cifre.")
 
+# Funzione per verificare la correttezza della data di scadenza
 def validate_expiration_date(value):
     try:
         expiration_date = datetime.datetime.strptime(value, "%m/%y")
@@ -15,14 +16,17 @@ def validate_expiration_date(value):
     except ValueError:
         raise forms.ValidationError("Formato della data di scadenza non valido. Usa MM/YY.")
 
+# Funzione per verificare la correttezza dell'intestatario della carta, del nome e del cognome
 def validate_name(value):
     if any(char.isdigit() for char in value):
         raise forms.ValidationError("II numeri non sono permessi.")
 
+# Funzione per verificare la correttezza del numero della carta
 def validate_card_number(value):
     if not value.isdigit() or not (13 <= len(value) <= 16):
         raise forms.ValidationError("Il numero della carta deve essere composto da 13 a 16 cifre.")
 
+# Form per l'acquisto di una proiezione
 class BookingForm(forms.ModelForm):
     first_name = forms.CharField(label="Nome", max_length=50, required=True, validators=[validate_name])
     last_name = forms.CharField(label="Cognome", max_length=50, required=True, validators=[validate_name])
