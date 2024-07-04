@@ -1,2 +1,4 @@
 __pycache__
 db.sqlite3
+/static/json/screenings.json
+/static/json/bookings.json
