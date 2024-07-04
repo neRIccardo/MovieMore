@@ -6,7 +6,6 @@ from django.contrib.auth.models import User, Group
 from django.db import connection
 from datetime import datetime, timedelta
 
-
 def reset_id_counter(table_name):
     with connection.cursor() as cursor:
         cursor.execute(f"DELETE FROM sqlite_sequence WHERE name='{table_name}';")
@@ -44,9 +43,6 @@ def init_movies():
         movie.save()
 
 
-import json
-from django.contrib.auth.models import User, Group
-
 def init_users():
     with open('static/json/users.json', 'r') as f:
         users_data = json.load(f)
@@ -73,11 +69,10 @@ def init_users():
     # Creazione degli utenti standard
     for user_data in users_data:
         username = user_data['fields']['user']
-        password = user_data['fields']['password']
 
         user, created = User.objects.get_or_create(username=username)
         if created:
-            user.set_password(password)
+            user.set_password("progettocinema")
             user.save()
         user.groups.add(group_standard)
 
@@ -112,7 +107,7 @@ def init_screenings():
     def generate_random_time():
         return today.replace(hour=random.randint(17, 23), minute=random.randint(0, 3) * 15, second=0, microsecond=0)
 
-    def is_overlapping(room_id, start_time, movie_duration):
+    def check_overlap(room_id, start_time, movie_duration):
         end_time = start_time + timedelta(minutes=movie_duration)
         for screening in screenings_data:
             if screening['fields']['room'] == room_id:
@@ -133,7 +128,7 @@ def init_screenings():
             start_date = generate_random_time()
             start_date += timedelta(days=random.randint(0, (max_date - today).days))
             
-            if not is_overlapping(room['pk'], start_date, movie_duration):
+            if not check_overlap(room['pk'], start_date, movie_duration):
                 price = round(random.uniform(1, 10), 2)
                 screening = {
                     "model": "screenings.screening",

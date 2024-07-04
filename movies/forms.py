@@ -1,7 +1,9 @@
 from django import forms
+
+from screenings.models import Screening
 from .models import Movie
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class MovieForm(forms.ModelForm):
     class Meta:
@@ -21,6 +23,7 @@ class MovieForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(MovieForm, self).__init__(*args, **kwargs)
         self.original_title = self.instance.title if self.instance.pk else None
+        self.original_duration = self.instance.duration if self.instance.pk else None
 
     def clean_title(self):
         title = self.cleaned_data.get('title')
@@ -60,6 +63,8 @@ class MovieForm(forms.ModelForm):
         duration = self.cleaned_data.get('duration')
         if duration <= 0:
             raise forms.ValidationError("La durata deve essere un numero positivo.")
+        if self.instance.pk and duration != self.original_duration:
+            self.check_screening_overlaps(duration)
         return duration
 
     def clean_poster(self):
@@ -68,6 +73,18 @@ class MovieForm(forms.ModelForm):
             if not poster.content_type.startswith('image'):
                 raise forms.ValidationError("Formato immagine non valido. Utilizza un formato di immagine valido.")
         return poster
+
+    def check_screening_overlaps(self, new_duration):
+        screenings = Screening.objects.filter(movie=self.instance)
+        for screening in screenings:
+            end_time = screening.start_time + timedelta(minutes=new_duration)
+            overlapping_screenings = Screening.objects.filter(
+                room=screening.room,
+                start_time__lt=end_time,
+                start_time__gte=screening.start_time
+            ).exclude(id=screening.id)
+            if overlapping_screenings.exists():
+                raise forms.ValidationError("La modifica della durata crea una sovrapposizione con una proiezione esistente.")
 
 class MovieSearchForm(forms.Form):
     title = forms.CharField(max_length=255, required=False, label='Titolo')
