@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.db.models import Sum
 from bookings.models import *
 
+# Forma per l'aggiunta/modifica di una sala
 class ScreeningRoomForm(forms.ModelForm):
     class Meta:
         model = ScreeningRoom
@@ -19,7 +20,7 @@ class ScreeningRoomForm(forms.ModelForm):
         super(ScreeningRoomForm, self).__init__(*args, **kwargs)
         self.original_name = self.instance.name if self.instance.pk else None
 
-    def clean_name(self):
+    def clean_name(self): # Metodo per controllare il nome
         name = self.cleaned_data.get('name')
         if self.instance.pk and name == self.original_name:
             return name
@@ -29,7 +30,7 @@ class ScreeningRoomForm(forms.ModelForm):
             raise forms.ValidationError("Nome non nel formato valido")
         return name
 
-    def clean_capacity(self):
+    def clean_capacity(self): # Metodo per controllare la capacità
         capacity = self.cleaned_data.get('capacity')
         if capacity <= 0:
             raise forms.ValidationError("La capacità deve essere un numero positivo")
@@ -52,6 +53,7 @@ class ScreeningRoomForm(forms.ModelForm):
 
         return capacity
 
+# Form per l'aggiunta/modifica di una proiezione
 class ScreeningForm(forms.ModelForm):
     class Meta:
         model = Screening
@@ -91,7 +93,7 @@ class ScreeningForm(forms.ModelForm):
         
         return False
 
-    def clean_start_time(self):
+    def clean_start_time(self): # Metodo per controllare la data/orario della proiezione
         start_time = self.cleaned_data.get('start_time')
         room = self.cleaned_data.get('room')
         movie = self.cleaned_data.get('movie')
@@ -108,12 +110,13 @@ class ScreeningForm(forms.ModelForm):
         
         return start_time
 
-    def clean_price(self):
+    def clean_price(self): # Metodo per controllare il prezzo
         price = self.cleaned_data.get('price')
         if price is not None and price <= 0:
             raise forms.ValidationError('Il prezzo deve essere maggiore di zero.')
         return price
 
+# Form per la ricerca delle proiezioni
 class ScreeningsSearchForm(forms.Form):
     title = forms.CharField(max_length=255, required=False, label='Titolo')
     genre = forms.CharField(max_length=50, required=False, label='Genere')

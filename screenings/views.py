@@ -2,18 +2,21 @@ from .forms import *
 from cinema.views import *
 from .models import *
 
+# Class based view per aggiungere una sala
 class AddScreeningRoomView(AddItemView):
     model = ScreeningRoom
     form_class = ScreeningRoomForm
     template_name = 'add_screening_room.html'
     success_message = 'Sala aggiunta con successo'
 
+# Class based view per aggiungere una proiezione
 class AddScreeningView(AddItemView):
     model = Screening
     form_class = ScreeningForm
     template_name = 'add_screening.html'
     success_message = 'Proiezione aggiunta con successo'
 
+# Class based view per modificare una sala
 class EditScreeningRoomView(EditItemView):
     model = ScreeningRoom
     form_class = ScreeningRoomForm
@@ -21,6 +24,7 @@ class EditScreeningRoomView(EditItemView):
     success_message = 'Sala modificata con successo'
     pk_url_kwarg = 'screeningroom_id'
 
+# Class based view per modificare una priezione
 class EditScreeningView(EditItemView):
     model = Screening
     form_class = ScreeningForm
@@ -28,18 +32,21 @@ class EditScreeningView(EditItemView):
     success_message = 'Proiezione modificata con successo'
     pk_url_kwarg = 'screening_id'
 
+# Class based view per eliminare una sala
 class DeleteScreeningRoomView(DeleteItemView):
     model = ScreeningRoom
     template_name = 'delete_screening_room.html'
     success_message = 'Sala eliminata con successo'
     pk_url_kwarg = 'screeningroom_id'
 
+# Class based view per eliminare una proiezione
 class DeleteScreeningView(DeleteItemView):
     model = Screening
     template_name = 'delete_screening.html'
     success_message = 'Proiezione eliminata con successo'
     pk_url_kwarg = 'screening_id'
 
+# Class based view per mostrare la lista delle sale
 class ScreeningRoomListView(CustomRequired, ListView):
     model = ScreeningRoom
     template_name = 'list_screening_rooms.html'
@@ -47,7 +54,7 @@ class ScreeningRoomListView(CustomRequired, ListView):
     paginate_by = 5
     group_required = ['AmministratoriCinema']
 
-    def get_queryset(self):
+    def get_queryset(self): # Metodo che restituisce la queryset delle sale da visualizzare
         queryset = super().get_queryset()
         name = self.request.GET.get('name')
         capacity = self.request.GET.get('capacity')
@@ -57,12 +64,13 @@ class ScreeningRoomListView(CustomRequired, ListView):
             queryset = queryset.filter(capacity__icontains=capacity)
         return queryset
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # Metodo per aggiungere dati aggiuntivi al contesto del template
         context = super().get_context_data(**kwargs)
         context['name'] = self.request.GET.get('name', '')
         context['capacity'] = self.request.GET.get('capacity', '')
         return context
 
+# Class based view per mostrare la lista delle proiezioni
 class ScreeningListView(CustomRequired, ListView):
     model = Screening
     template_name = 'list_screenings.html'
@@ -70,7 +78,7 @@ class ScreeningListView(CustomRequired, ListView):
     paginate_by = 10
     group_required = ['AmministratoriCinema']
 
-    def get_queryset(self):
+    def get_queryset(self): # Metodo che restituisce la queryset delle proiezioni da visualizzare
         queryset = super().get_queryset().select_related('movie', 'room')
         search_form = ScreeningsSearchForm(self.request.GET)
         if search_form.is_valid():
@@ -91,7 +99,7 @@ class ScreeningListView(CustomRequired, ListView):
                 queryset = queryset.order_by(search_form.cleaned_data['order_by'])
         return queryset
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # Metodo per aggiungere dati aggiuntivi al contesto del template
         context = super().get_context_data(**kwargs)
         context['search_form'] = ScreeningsSearchForm(self.request.GET)
         return context

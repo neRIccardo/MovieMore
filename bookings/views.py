@@ -13,8 +13,8 @@ from cinema.views import custom_404_view, CustomRequired
 # Funzione per generare i numeri di posto in base a quanti posti ha acquistato l'utente
 def generate_seat_numbers(screening, num_seats):
     total_seats = list(range(1, screening.room.capacity + 1))
-    booked_seats = screening.bookings.values_list('seat_numbers', flat=True)
-    booked_seats = [int(seat) for sublist in booked_seats for seat in sublist.split(',')]
+    booked_seats = screening.bookings.values_list('seat_numbers', flat=True) # ottiene una lista di stringhe contenenti i numeri dei posti prenotati, separati da virgole
+    booked_seats = [int(seat) for sublist in booked_seats for seat in sublist.split(',')] # trasforma queste stringhe in una lista di interi
     available_seats = list(set(total_seats) - set(booked_seats))
 
     if num_seats > len(available_seats):
@@ -35,7 +35,7 @@ class PurchaseTicketsView(CustomRequired, CreateView):
         except Http404:
             return custom_404_view(self.request)
         
-        total_booked_seats = self.screening.bookings.aggregate(total=Sum('seats'))['total'] or 0
+        total_booked_seats = self.screening.bookings.aggregate(total=Sum('seats'))['total'] or 0 # Calcolo posti prenotati per una certa proiezione
         if total_booked_seats >= self.screening.room.capacity:
             messages.success(self.request, 'Proiezione sold out.')
             return redirect('home')

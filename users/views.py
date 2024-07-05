@@ -11,6 +11,7 @@ from bookings.models import Booking
 from django.views.generic import ListView
 from cinema.views import CustomRequired
 
+# Function view per la renderizzazione della registrazione
 def signup_view(request):
     if request.user.is_authenticated:
         messages.success(request, 'Effettua il logout per poter registrare un nuovo profilo.')
@@ -29,6 +30,7 @@ def signup_view(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
+# Function view per la renderizzazione del login
 def login_view(request):
     if request.user.is_authenticated:
         messages.success(request, 'Hai già eseguito l\'accesso.')
@@ -45,6 +47,7 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
+# Function view per eseguire il logout
 def logout_view(request):
     if not request.user.is_authenticated:
         messages.success(request, 'Devi prima accedere per poter eseguire il logout.')
@@ -53,10 +56,11 @@ def logout_view(request):
         messages.success(request, 'Logout eseguito con successo.')
     return redirect(reverse_lazy('home'))
 
+# Class based view per modificare il proprio profilo
 class EditProfileView(CustomRequired, View):
     group_required = None
 
-    def get(self, request):
+    def get(self, request): # Metodo che tenta di ottenere il profilo dell'utente corrente
         try:
             profile = request.user.userprofile
         except UserProfile.DoesNotExist:
@@ -65,7 +69,7 @@ class EditProfileView(CustomRequired, View):
         form = UserProfileForm(instance=profile)
         return render(request, 'edit_profile.html', {'form': form})
 
-    def post(self, request):
+    def post(self, request): # Metodo che tenta di ottenere il profilo dell'utente corrente e gestire il POST delle modifiche ad esso
         try:
             profile = request.user.userprofile
         except UserProfile.DoesNotExist:
@@ -79,10 +83,11 @@ class EditProfileView(CustomRequired, View):
         
         return render(request, 'edit_profile.html', {'form': form})
 
+# Class based view per visualizzare il proprio profilo
 class ViewProfileView(CustomRequired, View):
     group_required = None
 
-    def get(self, request):
+    def get(self, request): # Metodo che tenta di ottenere il profilo dell'utente corrente
         try:
             profile = request.user.userprofile
         except UserProfile.DoesNotExist:
@@ -90,6 +95,7 @@ class ViewProfileView(CustomRequired, View):
         
         return render(request, 'profile.html', {'profile': profile})
 
+# Class based view per visualizzare gli acquisti di un certo utente
 class BookingListView(CustomRequired, ListView):
     model = Booking
     template_name = 'user_bookings.html'
@@ -97,9 +103,9 @@ class BookingListView(CustomRequired, ListView):
     paginate_by = 5
     group_required = None
 
-    def get_queryset(self):
+    def get_queryset(self): # Metodo che restituisce la queryset degli acquisti da visualizzare
         return Booking.objects.filter(user=self.request.user).order_by('screening__start_time')
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # Metodo per aggiungere dati aggiuntivi al contesto del template
         context = super().get_context_data(**kwargs)
         return context

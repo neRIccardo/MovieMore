@@ -82,7 +82,7 @@ class PurchaseTicketsViewTest(TestCase):
         post_data = {
             'first_name': 'Test1', # no numeri
             'last_name': 'Us3r', # no numeri
-            'email': 'invalid_email',
+            'email': 'invalid_email', # manca la @
             'cc_name': 'Test User 1', # no numeri
             'cc_number': '1234567812345678123456', # troppi numeri
             'cc_expiration': '12/22', # scaduta

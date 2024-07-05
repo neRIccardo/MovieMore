@@ -2,6 +2,7 @@ from django import forms
 from .models import UserProfile
 import re
 
+# Form per visualizzare/modificare il proprio profilo
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
@@ -13,13 +14,13 @@ class UserProfileForm(forms.ModelForm):
             'profile_picture': 'Foto del Profilo',
         }
 
-    def clean_first_name(self):
+    def clean_first_name(self): # Metodo per controllare il nome
         first_name = self.cleaned_data['first_name']
         if re.search(r'\d', first_name):
             raise forms.ValidationError("Il nome non può contenere numeri.")
         return first_name
 
-    def clean_last_name(self):
+    def clean_last_name(self): # Metodo per controllare il cognome
         last_name = self.cleaned_data['last_name']
         if re.search(r'\d', last_name):
             raise forms.ValidationError("Il cognome non può contenere numeri.")

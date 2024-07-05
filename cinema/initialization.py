@@ -124,7 +124,7 @@ def init_screenings():
         movie_duration = movie['fields']['duration']
         screenings_per_movie = 0
         
-        while screenings_per_movie < 5:
+        while screenings_per_movie < 5: # Per ogni film vengono create 5 proiezioni
             room = random.choice(rooms_data)
             start_date = generate_random_time()
             start_date += timedelta(days=random.randint(0, (max_date - today).days))
